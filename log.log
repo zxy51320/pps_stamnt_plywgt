@@ -1,0 +1,114 @@
+2025-07-18 16:53:49,388 - INFO - Started - MID: ['554402040703142']
+2025-07-18 16:54:01,906 - INFO - Downloading statement for MID: 554402040703142 from Fiserv - Omaha
+2025-07-18 16:54:33,184 - INFO - Lagacy
+2025-07-18 16:54:36,717 - INFO - Started - MID: ['8739781940608005']
+2025-07-18 16:54:43,692 - INFO - Downloading statement for MID: 8739781940608005 from TSYS
+2025-07-18 16:54:48,389 - INFO - Key 3
+2025-07-18 16:54:53,371 - INFO - Started - MID: ['815219362887']
+2025-07-18 16:54:56,669 - INFO - Downloading statement for MID: 815219362887 from Fiserv North
+2025-07-18 16:55:27,057 - ERROR - Error processing MID 815219362887: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".src-components-dynamic-grid-styles--cell").first
+
+2025-07-18 16:59:41,444 - INFO - Started - MID: ['815219362887']
+2025-07-18 16:59:50,986 - INFO - MID: 815219362887 for Fiserv North
+2025-07-18 17:00:21,357 - ERROR - No statements found for MID 815219362887
+2025-07-18 17:00:51,375 - INFO - Lagacy
+2025-07-18 17:00:55,860 - ERROR - Error processing MID 815219362887: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("button", name="PDF")
+
+2025-07-18 17:00:55,861 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:00:56,013 - ERROR - Error processing MID 554402040703142: Locator.click: Target page, context or browser has been closed
+2025-07-18 17:01:05,360 - INFO - Started - MID: ['815219362887']
+2025-07-18 17:01:14,839 - INFO - MID: 815219362887 for Fiserv North
+2025-07-18 17:01:45,366 - ERROR - No statements found for MID 815219362887
+2025-07-18 17:01:45,366 - ERROR - Error processing MID 815219362887: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".src-components-dynamic-grid-styles--cell").first
+
+2025-07-18 17:01:45,367 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:01:50,371 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2025-07-18 17:02:21,528 - INFO - Lagacy
+2025-07-18 17:03:43,429 - INFO - Started - MID: ['81521936288']
+2025-07-18 17:03:53,874 - INFO - MID: 81521936288 for Fiserv North
+2025-07-18 17:03:57,592 - ERROR - No statements found for MID 81521936288
+2025-07-18 17:03:57,593 - ERROR - Error processing MID 81521936288: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator(".src-components-dynamic-grid-styles--cell").first
+
+2025-07-18 17:03:57,593 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:03:57,595 - ERROR - Can not find MID 554402040703142
+2025-07-18 17:03:57,595 - ERROR - Error processing MID 554402040703142: Locator.click: Target page, context or browser has been closed
+2025-07-18 17:04:14,711 - INFO - Started - MID: ['81521936233218']
+2025-07-18 17:04:48,787 - ERROR - Can not find MID 81521936233218
+2025-07-18 17:04:48,787 - ERROR - Error processing MID 81521936233218: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Go To")
+
+2025-07-18 17:04:48,787 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:04:56,708 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2025-07-18 17:05:27,711 - INFO - Lagacy
+2025-07-18 17:07:15,693 - INFO - Started - MID: ['81521936233218']
+2025-07-18 17:07:33,948 - ERROR - Can not find MID 81521936233218
+2025-07-18 17:07:33,949 - ERROR - Error processing MID 81521936233218: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Go To")
+
+2025-07-18 17:07:33,949 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:07:40,716 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2025-07-18 17:07:56,617 - INFO - Lagacy
+2025-07-18 17:13:54,759 - INFO - Started - MID: ['81521936233218']
+2025-07-18 17:14:13,978 - ERROR - Can not find MID 81521936233218
+2025-07-18 17:14:13,978 - ERROR - Error processing MID 81521936233218: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Go To")
+
+2025-07-18 17:14:13,979 - INFO - Started - MID: ['815219362887']
+2025-07-18 17:14:19,162 - INFO - MID: 815219362887 for Fiserv North
+2025-07-18 17:14:34,608 - ERROR - No statements found for MID 815219362887
+2025-07-18 17:14:34,608 - ERROR - Error processing MID 815219362887: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(".src-components-dynamic-grid-styles--cell").first
+
+2025-07-18 17:14:34,609 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:14:40,095 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2025-07-18 17:14:42,919 - INFO - Lagacy
+2025-07-18 17:14:47,173 - INFO - Downloaded statement for MID 554402040703142
+2025-07-18 17:15:03,922 - INFO - Started - MID: ['81521936233218']
+2025-07-18 17:15:09,176 - ERROR - Can not find MID 81521936233218
+2025-07-18 17:15:09,176 - ERROR - Error processing MID 81521936233218: Locator.click: Timeout 2000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Go To")
+
+2025-07-18 17:15:09,176 - INFO - Started - MID: ['815219362887']
+2025-07-18 17:15:13,337 - INFO - MID: 815219362887 for Fiserv North
+2025-07-18 17:15:15,772 - ERROR - No statements found for MID 815219362887
+2025-07-18 17:15:15,772 - ERROR - Error processing MID 815219362887: Locator.click: Timeout 2000ms exceeded.
+Call log:
+  - waiting for locator(".src-components-dynamic-grid-styles--cell").first
+
+2025-07-18 17:15:15,772 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:15:17,963 - ERROR - Can not find MID 554402040703142
+2025-07-18 17:15:17,963 - ERROR - Error processing MID 554402040703142: Locator.click: Timeout 2000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Go To")
+
+2025-07-18 17:22:00,809 - INFO - Started - MID: ['81521936233218']
+2025-07-18 17:22:07,100 - ERROR - Can not find MID 81521936233218
+2025-07-18 17:22:07,100 - ERROR - Error processing MID 81521936233218: Locator.click: Timeout 3000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Go To")
+
+2025-07-18 17:22:07,100 - INFO - Started - MID: ['815219362887']
+2025-07-18 17:22:12,099 - INFO - MID: 815219362887 for Fiserv North
+2025-07-18 17:22:15,646 - ERROR - No statements found for MID 815219362887
+2025-07-18 17:22:15,646 - ERROR - Error processing MID 815219362887: Locator.click: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator(".src-components-dynamic-grid-styles--cell").first
+
+2025-07-18 17:22:15,646 - INFO - Started - MID: ['554402040703142']
+2025-07-18 17:22:22,080 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2025-07-18 17:22:26,028 - INFO - Lagacy
+2025-07-18 17:22:30,649 - INFO - Downloaded statement for MID 554402040703142
+2025-07-18 17:22:30,649 - INFO - Fallures: ['81521936233218', '815219362887']
