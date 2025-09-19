@@ -1,4 +1,3 @@
-# tests/test_download_statements.py
 #playwright codegen https://mxconnect.com/#/login
 import csv
 from playwright.sync_api import sync_playwright,Playwright
@@ -12,32 +11,36 @@ def load_mids(csv_path: str):
         return [row["MID"] for row in csv.DictReader(csvfile)]
 
 def statement_download():
-    mids = load_mids("TestData/Merchant Open Account (list_of_open_account).csv")
+    mids = load_mids("TestData/Statement for PPS.csv")
     if not mids:
         logging.error("No MIDs found in the CSV file.")
         return
     username = "Brianl@zbspos.com"
-    password = "1990100900pW@"
+    password = "Brianl@12345"
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         context = browser.new_context(accept_downloads=True, viewport={"width": 1440, "height": 800})
         page = context.new_page()
-        page.set_default_timeout(15000)
+        page.set_default_timeout(20000)
         login_page = LoginPage(page)
         dashboard = DashboardPage(page)
 
-        login_page.goto()
         login_page.login(username, password)
         failures = []
         for mid in mids:
-            try:
-                logging.info(f"Started - MID: {[mid]}")
-                dashboard.search_mid(mid)
-                dashboard.download_pdf(mid,f"statements/{mid}.pdf")
-            except Exception as e:
-                failures.append(mid)
-                logging.error(f"Error processing MID {mid}: {e}")
+            for attempt in range(2):  # 最多尝试两次
+                try:
+                    logging.info(f"Started - MID: {mid} (Attempt {attempt+1})")
+                    dashboard.search_mid(mid)
+                    dashboard.download_pdf(mid)
+                    break  # 成功就退出重试循环
+                except Exception as e:
+                    logging.error(f"Error processing MID {mid} on attempt {attempt+1}: {e}")
+                    page.reload()
+                    if attempt == 1:
+                        failures.append(mid)
+                        logging.error(f"Failed twice for MID {mid}, skipping.")
         logging.info(f"Fallures: {failures}")
         context.close()
         browser.close()
