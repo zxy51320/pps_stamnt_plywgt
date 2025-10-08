@@ -17,7 +17,7 @@ def load_data(csv_path: str):
             try:
                 name_parts = owner_name.split()
                 row['first_name'] = name_parts[0]
-                row['last_name'] = name_parts[1]
+                row['last_name'] = name_parts[-1]
             except:
                 row['first_name'] = row['last_name'] = owner_name
                 

@@ -3,6 +3,8 @@ import time, re, logging
 from playwright.sync_api import Page
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from playwright.sync_api import expect
+
 
 
 class DashboardPage:
@@ -54,26 +56,29 @@ class DashboardPage:
             logging.error(f"No {self.last_month_name} statement found for MID {mid}")
             raise Exception(f"No {self.last_month_name} statement found for MID {mid}")
         time.sleep(5)
-        # Check if Legacy and make sure the statement is for the correct MID
-        if self.page.get_by_role("button", name="Key 3").is_visible() and self.page.locator("iframe").content_frame.get_by_text(mid).is_visible():
-            logging.info(f"Auto Key 3")
-        elif self.page.get_by_role("cell", name=f"MERCHANT : {mid}", exact=True).is_visible():
-            logging.info(f"Lagacy")
-        elif self.page.get_by_role("button", name="Summary").is_visible() and self.page.locator("iframe").content_frame.get_by_text(mid).is_visible():
-            self.page.get_by_role("button", name="Summary").click()
-            self.page.get_by_role("option", name="Key 3").click()
-            logging.info(f"Manual Key 3")
+        # Make sure the statement is for the correct MID
+        try:
+            frame = self.page.frame_locator("iframe")
+            expect(frame.get_by_text(mid)).to_be_visible(timeout=10000)
+            found = True
+        except Exception:
+            try:
+                expect(self.page.get_by_role("cell", name=f"MERCHANT : {mid}", exact=True)).to_be_visible(timeout=10000)
+                found = True
+            except Exception:
+                found = False
+        if found:
+            with self.page.expect_download() as download_info:
+                self.page.get_by_role("button", name="PDF").click()
+            download = download_info.value
+            download.save_as(f"statements/{mid}.pdf")
+            logging.info(f"Downloaded statement for MID {mid}")
         else:
             logging.error(f"Cannot find the statement for MID {mid}")
             raise Exception(f"Cannot find the statement for MID {mid}")
-        time.sleep(2)
-        with self.page.expect_download() as download_info:
-            self.page.get_by_role("button", name="PDF").click()
-        download = download_info.value
-        download.save_as(f"statements/{mid}.pdf")
-        time.sleep(1)
-        logging.info(f"Downloaded statement for MID {mid}")
-        self.page.reload()
+
+        self.page.reload(wait_until="load")
+
         
         
     def new_app(self,data: dict):
@@ -135,18 +140,19 @@ class DashboardPage:
             self.page.get_by_role("textbox", name="Average Monthly Sales ($)").fill(data['Estimated Monthly Sale Volume'])
             self.page.get_by_role("textbox", name="Swiped, EMV %").fill("98")
             self.page.get_by_role("textbox", name="Keyed, MOTO %").fill("2")
+            __welcomeKit = self.page.locator('div.MuiFormControl-root', has_text="Welcome Kit").get_by_role("button")
+            __statementBranding = self.page.locator('div.MuiFormControl-root', has_text="Statement Branding").get_by_role("button")
             if __caseType == 2:
-                self.page.get_by_role("button", name="Global Welcome Kit - TSYS").click()
+                __welcomeKit.click()
                 self.page.get_by_role("option", name="TSYS - Welcome Kit").click()
                 time.sleep(1)
-                self.page.get_by_role("button", name="ZBS Kevin Tsys Stmt Branding").click()
+                __statementBranding.click()
                 self.page.get_by_role("option", name="PIS - Wholesale Processing").click()
             else:
-                self.page.get_by_role("button", name="Global Welcome Kit - TSYS").click()
+                __welcomeKit.click()
                 self.page.get_by_role("option", name="Welcome Kit - TSYS", exact=True).click()
-                if self.page.get_by_role("button", name="Team FZ TSYS Statement Branding").is_visible():
-                    self.page.get_by_role("button", name="Team FZ TSYS Statement Branding").click()
-                    self.page.get_by_role("option", name="PIS - Wholesale Processing").click()
+                __statementBranding.click()
+                self.page.get_by_role("option", name="PIS - Wholesale Processing").click()
 
             self.page.get_by_role("tab", name="Features").click()
             self.page.get_by_role("combobox").select_option("combined - all batches")
@@ -209,10 +215,10 @@ class DashboardPage:
             self.page.get_by_role("button", name="Legal").click()
             self.page.get_by_role("textbox", name="Client Legal Entity Name").fill(data['Legal Name of Business'])
             self.page.get_by_role("checkbox", name="Copy Location Address").check()
-            if "LLC" in data['Legal Type']:
+            if data['Legal Type'] == "LLC":
                 self.page.get_by_role("textbox", name="Legal Entity Type").fill("LLC")
                 self.page.get_by_role("option", name="LLC", exact=True).click()
-            elif "Corporation" in data['Legal Type']:
+            elif data['Legal Type'] == "Corporation":
                 self.page.get_by_role("textbox", name="Legal Entity Type").fill("S-Corp")
                 self.page.get_by_role("option", name="S-Corp", exact=True).click()
             else:
