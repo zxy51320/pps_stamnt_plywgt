@@ -1,10 +1,10 @@
 # pages/dashboard_page.py
-import time, re, logging
+import time, re, logging, os
 from playwright.sync_api import Page
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from playwright.sync_api import expect
-
+from pypdf import PdfReader, PdfWriter
 
 
 class DashboardPage:
@@ -26,64 +26,101 @@ class DashboardPage:
             raise e
 
     def download_pdf(self,mid: str):
-        time.sleep(2)  # Wait for the page to load
-        self.page.get_by_role("tab", name="SUMMARY").click()
-        if self.page.get_by_text("Closed").first.is_visible():
-            logging.error(f"Merchant {mid} is closed, skipping download.")
-            return
-        # Determine the tab to click based on the MID prefix
-        first_four = mid[:4]
-        if first_four == "8739" or first_four == "5631":
-            self.page.get_by_role("tab", name="TSYS").click()
-            logging.info(f"MID: {mid} for TSYS")
-        elif first_four == "8152":
-            self.page.get_by_role("tab", name="Fiserv North").click()
-            logging.info(f"MID: {mid} for Fiserv North")
-        elif first_four == "5544":
-            self.page.get_by_role("tab", name="Fiserv - Omaha").click()
-            logging.info(f"MID: {mid} for Fiserv - Omaha")
-        self.page.get_by_role("tab", name="Reports").click()
-        # Find Statements tab
-        while not self.page.get_by_role("tab", name="Statements").is_visible():
-            self.page.get_by_test_id("MerchantDetails-WaitSpinner").locator("svg").nth(3).click()
-        self.page.get_by_role("tab", name="Statements").click()
         try:
-            if self.page.get_by_role("tab", name="Statements - Legacy").is_visible():
-                self.page.locator(".src-components-dynamic-grid-styles--cell").first.click()
-            else:
-                self.page.get_by_role("cell", name=f"{self.last_month_name}").click()
-        except Exception:
-            logging.error(f"No {self.last_month_name} statement found for MID {mid}")
-            raise Exception(f"No {self.last_month_name} statement found for MID {mid}")
-        time.sleep(5)
-        # Make sure the statement is for the correct MID
-        try:
-            frame = self.page.frame_locator("iframe")
-            expect(frame.get_by_text(mid)).to_be_visible(timeout=10000)
-            found = True
-        except Exception:
+            time.sleep(2)  # Wait for the page to load
+            self.page.get_by_role("tab", name="SUMMARY").click()
+            if self.page.get_by_text("Closed").first.is_visible():
+                logging.warning(f"Merchant {mid} is closed, skipping download.")
+                return "closed", "Merchant closed"
+            loc = self.page.get_by_text(re.compile(r"\b[A-Z]{2}\s+\d{5}(?:-\d{4})?\b")).nth(1)
+            text = loc.inner_text()
+            loc_zip = re.search(r'\b(?:[A-Z]{2})\s+(\d{5})(?:-\d{4})?\b', text).group(1)
+            logging.info(f"Location ZIP for MID {mid}: {loc_zip}")
+            # Determine the tab to click based on the MID prefix
+            first_four = mid[:4]
+            if first_four == "8739" or first_four == "5631":
+                self.page.get_by_role("tab", name="TSYS").click()
+                logging.info(f"MID: {mid} for TSYS")
+            elif first_four == "8152":
+                self.page.get_by_role("tab", name="Fiserv North").click()
+                logging.info(f"MID: {mid} for Fiserv North")
+            elif first_four == "5544":
+                self.page.get_by_role("tab", name="Fiserv - Omaha").click()
+                logging.info(f"MID: {mid} for Fiserv - Omaha")
+
+            self.page.get_by_role("tab", name="Reports").click()
+
+            # Find Statements tab
+            while not self.page.get_by_role("tab", name="Statements").is_visible():
+                self.page.get_by_test_id("MerchantDetails-WaitSpinner").locator("svg").nth(3).click()
+            self.page.get_by_role("tab", name="Statements").click()
+
             try:
-                expect(self.page.get_by_role("cell", name=f"MERCHANT : {mid}", exact=True)).to_be_visible(timeout=10000)
+                if self.page.get_by_role("tab", name="Statements - Legacy").is_visible():
+                    self.page.locator(".src-components-dynamic-grid-styles--cell").first.click()
+                else:
+                    self.page.get_by_role("cell", name=f"{self.last_month_name}").click()
+            except Exception:
+                msg = f"No {self.last_month_name} statement found for MID {mid}"
+                logging.error(msg)
+                return "failed", msg
+
+            time.sleep(5)
+
+            # Make sure the statement is for the correct MID
+            try:
+                frame = self.page.frame_locator("iframe")
+                expect(frame.get_by_text(mid)).to_be_visible(timeout=10000)
                 found = True
             except Exception:
-                found = False
-        if found:
-            with self.page.expect_download() as download_info:
-                self.page.get_by_role("button", name="PDF").click()
-            download = download_info.value
-            download.save_as(f"statements/{mid}.pdf")
-            logging.info(f"Downloaded statement for MID {mid}")
-        else:
-            logging.error(f"Cannot find the statement for MID {mid}")
-            raise Exception(f"Cannot find the statement for MID {mid}")
+                try:
+                    expect(self.page.get_by_role("cell", name=f"MERCHANT : {mid}", exact=True)).to_be_visible(timeout=10000)
+                    found = True
+                except Exception:
+                    found = False
 
-        self.page.reload(wait_until="load")
+            if found:
+                with self.page.expect_download() as download_info:
+                    self.page.get_by_role("button", name="PDF").click()
+                download = download_info.value
+                download.save_as(f"{self.last_month_name}_statements/{mid}.pdf")
+                self.encrypt_pdf(f"{self.last_month_name}_statements/{mid}.pdf", loc_zip)
+                """
+                pyminizip.compress(f"{self.last_month_name}_statements/{mid}.pdf", None,
+                                  f"{self.last_month_name}_statements/{mid}.zip", loc_zip, 5)
+                try:
+                    os.remove(f"{self.last_month_name}_statements/{mid}.pdf")
+                except OSError as e:
+                    logging.warning(f"Failed to delete: {f"{self.last_month_name}_statements/{mid}.pdf"} -> {e}")
+                """
+                logging.info(f"Downloaded statement for MID {mid}")
+                self.page.reload(wait_until="load")
+                return "downloaded", "ok"
+            else:
+                msg = f"Cannot find the statement content for MID {mid}"
+                logging.error(msg)
+                return "failed", msg
 
+        except Exception as e:
+            msg = f"Unexpected error for MID {mid}: {e}"
+            logging.error(msg)
+            return "failed", msg
         
+    def encrypt_pdf(self, loc: str, password: str):
+        reader = PdfReader(loc)
+        writer = PdfWriter()
+
+        for page in reader.pages:
+            writer.add_page(page)
+
+        writer.encrypt(user_password = password, owner_password = "zbspos_admin")
+
+        with open(loc, "wb") as f:
+            writer.write(f)
         
-    def new_app(self,data: dict):
+    def new_app(self,data: dict, quantity: int):
         self.page.get_by_role("navigation").get_by_text("Merchant").click()
-        self.page.get_by_text("Applications").click()
+        self.page.locator('.src-components-sidebar-styles--subMenu').get_by_text("Applications",exact=True).click()
         self.page.get_by_role("button", name="Add Application").click()
         # Location Search Tab
         self.page.get_by_role("textbox", name="Select a Partner").click()
@@ -203,13 +240,14 @@ class DashboardPage:
             self.page.get_by_role("textbox", name="Account #").first.fill(data['Bank Account'])
             self.page.get_by_role("textbox", name="Account #").nth(1).fill(data['Bank Account'])
             # Equipment Tab
-            self.page.get_by_role("tab", name="Equipment").click()
-            self.page.get_by_text("Add Equipment").click()
-            self.page.locator("input[placeholder='Search by Type, Vendor, Product or Feature']:enabled").fill("S80 (Class B PPS Build)")
-            self.page.locator(".src-components-form-combobox-styles--optionsContainer:visible").get_by_text("S80 (Class B PPS Build)").click()
-            self.page.locator("input[placeholder='Select an application...']:enabled").click()
-            self.page.locator(".src-components-form-combobox-styles--optionsContainer:visible").get_by_text("RAO Stage Only PAX B+").click()
-            self.page.get_by_role("banner").get_by_role("button").click()
+            for i in range(quantity):
+                self.page.get_by_role("tab", name="Equipment").click()
+                self.page.get_by_text("Add Equipment").click()
+                self.page.locator("input[placeholder='Search by Type, Vendor, Product or Feature'][value='']").fill("S80 (Class B PPS Build)")
+                self.page.locator(".src-components-form-combobox-styles--optionsContainer:visible").get_by_text("S80 (Class B PPS Build)").click()
+                self.page.locator("input[placeholder='Select an application...'][value='']").click()
+                self.page.locator(".src-components-form-combobox-styles--optionsContainer:visible").get_by_text("RAO Stage Only PAX B+").click()
+            self.page.get_by_role("banner").get_by_role("button").click() # Back to Products
             logging.info('Products Tab finished')
             # Legal Tab
             self.page.get_by_role("button", name="Legal").click()
@@ -252,7 +290,7 @@ class DashboardPage:
             self.page.get_by_role("textbox", name="SSN").fill(data['Social Security Number'])
             if len(data['Driver License Number']) > 1:
                 self.page.get_by_role("textbox", name="Driver's License").fill(data['Driver License Number'])
-                self.page.get_by_role("button", name="Open").nth(2).click()
+                self.page.get_by_role("button", name="Open").nth(3).click()
                 self.page.get_by_role("option", name=data['State Issued']).click()
             logging.info('Ownership Tab finished')
             self.page.get_by_role("button", name="Save").click()
