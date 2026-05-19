@@ -1,0 +1,285 @@
+2026-02-24 12:00:45,798 - INFO - CSV selected. Click [Run] to start.
+2026-02-24 12:00:46,186 - INFO - Running… (a browser window will open)
+2026-02-24 12:00:55,326 - INFO - Locating Chrome…
+2026-02-24 12:00:55,336 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-24 12:00:56,237 - INFO - Logging in…
+2026-02-24 12:00:59,159 - INFO - Submitting dashboard flow…
+2026-02-24 12:01:14,975 - INFO - Location Tab finished
+2026-02-24 12:01:40,011 - INFO - Added TSYS and MX_Merchant
+2026-02-24 12:01:42,387 - INFO - Setting Rates
+2026-02-24 12:01:44,356 - INFO - Setting Bank Info
+2026-02-24 12:01:48,161 - INFO - Products Tab finished
+2026-02-24 12:02:01,032 - INFO - Legal Tab finished
+2026-02-24 12:02:08,193 - INFO - Ownership Tab finished
+2026-02-24 12:02:11,757 - INFO - Done.
+2026-02-24 12:02:11,962 - INFO - Task completed \u2705
+2026-03-02 12:03:03,194 - INFO - CSV selected. Click [Run] to start.
+2026-03-02 12:03:03,721 - INFO - Running… (a browser window will open)
+2026-03-02 12:03:12,931 - INFO - Locating Chrome…
+2026-03-02 12:03:12,944 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-02 12:03:14,160 - INFO - Logging in…
+2026-03-02 12:03:30,103 - INFO - Submitting dashboard flow…
+2026-03-02 12:12:12,240 - INFO - CSV selected. Click [Run] to start.
+2026-03-02 12:12:12,809 - INFO - Running… (a browser window will open)
+2026-03-02 12:12:13,619 - INFO - Locating Chrome…
+2026-03-02 12:12:13,628 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-02 12:12:14,468 - INFO - Logging in…
+2026-03-02 12:12:17,831 - INFO - Submitting dashboard flow…
+2026-03-02 12:12:28,526 - ERROR - Error: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("button", name="Location", exact=True)
+    - locator resolved to <button disabled tabindex="-1" type="button" class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal Mui-disabled">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+. Save draft befor exit
+2026-03-02 12:12:29,030 - ERROR - Runtime error:
+Locator.click: Target page, context or browser has been closed
+
+Traceback (most recent call last):
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 280, in worker
+    run_playwright_flow(data, username, password, self.set_status, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 145, in run_playwright_flow
+    dashboard.new_app(data, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\Pages\dashboard_page.py", line 320, in new_app
+    self.page.get_by_role("button", name="Save").click()
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.click: Target page, context or browser has been closed
+
+2026-03-02 12:12:29,237 - INFO - Run failed \u274c
+2026-03-17 11:51:42,713 - INFO - CSV selected. Click [Run] to start.
+2026-03-17 11:51:44,098 - INFO - Running… (a browser window will open)
+2026-03-17 11:51:54,611 - INFO - Locating Chrome…
+2026-03-17 11:51:54,622 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 11:51:55,395 - INFO - Logging in…
+2026-03-17 11:51:57,647 - INFO - Submitting dashboard flow…
+2026-03-17 11:52:27,941 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 275, in worker
+    run_playwright_flow(data, username, password, self.set_status, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 140, in run_playwright_flow
+    dashboard.new_app(data, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-03-17 11:52:28,150 - INFO - Run failed \u274c
+2026-03-17 11:52:37,786 - INFO - Running… (a browser window will open)
+2026-03-17 11:52:38,791 - INFO - Locating Chrome…
+2026-03-17 11:52:38,800 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 11:52:39,709 - INFO - Logging in…
+2026-03-17 11:52:42,284 - INFO - Submitting dashboard flow…
+2026-03-17 11:53:12,515 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 275, in worker
+    run_playwright_flow(data, username, password, self.set_status, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 140, in run_playwright_flow
+    dashboard.new_app(data, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-03-17 11:53:12,517 - INFO - Run failed \u274c
+2026-03-17 11:56:28,463 - INFO - CSV selected. Click [Run] to start.
+2026-03-17 11:56:29,086 - INFO - Running… (a browser window will open)
+2026-03-17 11:56:30,091 - INFO - Locating Chrome…
+2026-03-17 11:56:30,102 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 11:56:30,845 - INFO - Logging in…
+2026-03-17 11:56:33,057 - INFO - Submitting dashboard flow…
+2026-03-17 11:56:48,757 - INFO - Location Tab finished
+2026-03-17 11:57:12,891 - INFO - Added TSYS and MX_Merchant
+2026-03-17 11:57:16,032 - INFO - Setting Rates
+2026-03-17 11:57:17,098 - INFO - Setting Bank Info
+2026-03-17 11:57:20,903 - INFO - Products Tab finished
+2026-03-17 11:57:34,525 - INFO - Legal Tab finished
+2026-03-17 11:57:42,235 - INFO - Ownership Tab finished
+2026-03-17 11:57:45,652 - INFO - Done.
+2026-03-17 11:57:45,855 - INFO - Task completed \u2705
+2026-03-17 12:38:02,089 - INFO - CSV selected. Click [Run] to start.
+2026-03-17 12:38:02,908 - INFO - Running… (a browser window will open)
+2026-03-17 12:38:03,884 - INFO - Locating Chrome…
+2026-03-17 12:38:03,895 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 12:38:05,273 - INFO - Logging in…
+2026-03-17 12:38:07,505 - INFO - Submitting dashboard flow…
+2026-03-17 12:38:21,166 - INFO - Location Tab finished
+2026-03-17 12:38:47,213 - INFO - Added TSYS and MX_Merchant
+2026-03-17 12:38:49,578 - INFO - Setting Rates
+2026-03-17 12:38:50,698 - INFO - Setting Bank Info
+2026-03-17 12:38:54,488 - INFO - Products Tab finished
+2026-03-17 12:39:06,038 - INFO - Legal Tab finished
+2026-03-17 12:39:14,040 - INFO - Ownership Tab finished
+2026-03-17 12:39:17,462 - INFO - Done.
+2026-03-17 12:39:17,676 - INFO - Task completed \u2705
+2026-05-19 15:58:16,493 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 15:58:17,627 - INFO - Running… (a browser window will open)
+2026-05-19 15:58:18,462 - INFO - Locating Chrome…
+2026-05-19 15:58:18,472 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 15:58:19,391 - INFO - Logging in…
+2026-05-19 15:58:21,125 - INFO - Waiting for two-step authentication...
+2026-05-19 15:58:45,519 - INFO - Submitting dashboard flow…
+2026-05-19 15:58:58,398 - INFO - Location Tab finished
+2026-05-19 15:59:25,904 - INFO - Added TSYS and MX_Merchant
+2026-05-19 15:59:28,065 - INFO - Setting Rates
+2026-05-19 15:59:30,046 - INFO - Setting Bank Info
+2026-05-19 15:59:33,930 - INFO - Products Tab finished
+2026-05-19 15:59:46,384 - INFO - Legal Tab finished
+2026-05-19 15:59:53,083 - INFO - Ownership Tab finished
+2026-05-19 15:59:56,968 - INFO - Done.
+2026-05-19 15:59:57,208 - INFO - Task completed \u2705
+2026-05-19 16:00:19,620 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 16:00:20,213 - INFO - Running… (a browser window will open)
+2026-05-19 16:00:21,113 - INFO - Locating Chrome…
+2026-05-19 16:00:21,124 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 16:00:21,903 - INFO - Logging in…
+2026-05-19 16:00:22,584 - INFO - Running… (a browser window will open)
+2026-05-19 16:00:23,521 - INFO - Locating Chrome…
+2026-05-19 16:00:23,530 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 16:00:24,267 - INFO - Waiting for two-step authentication...
+2026-05-19 16:00:24,837 - INFO - Logging in…
+2026-05-19 16:00:26,656 - INFO - Waiting for two-step authentication...
+2026-05-19 16:00:29,202 - INFO - Submitting dashboard flow…
+2026-05-19 16:00:29,476 - ERROR - Runtime error:
+Locator.click: Target page, context or browser has been closed
+
+Traceback (most recent call last):
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 307, in worker
+    run_playwright_flow(data, username, password, self.set_status, quantity, self.prompt_two_step_auth)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 151, in run_playwright_flow
+    dashboard.new_app(data, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.click: Target page, context or browser has been closed
+
+2026-05-19 16:00:29,653 - INFO - Run failed \u274c
+2026-05-19 16:00:32,246 - INFO - Submitting dashboard flow…
+2026-05-19 16:00:32,560 - ERROR - Runtime error:
+Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 307, in worker
+    run_playwright_flow(data, username, password, self.set_status, quantity, self.prompt_two_step_auth)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\new_app.py", line 151, in run_playwright_flow
+    dashboard.new_app(data, quantity)
+  File "c:\Users\Brian Li\Documents\GitHub\pps_plywgt\Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Brian Li\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-05-19 16:00:32,562 - INFO - Run failed \u274c
+2026-05-19 16:12:16,256 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 16:12:16,934 - INFO - Running... (a browser window will open)
+2026-05-19 16:12:18,449 - INFO - Locating Chrome…
+2026-05-19 16:12:18,451 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 16:12:19,432 - INFO - Logging in…
+2026-05-19 16:12:21,279 - INFO - Waiting for two-step authentication...
+2026-05-19 16:12:40,647 - INFO - Stopping...
+2026-05-19 16:12:40,759 - INFO - Run stopped.
+2026-05-19 16:12:48,358 - INFO - Running... (a browser window will open)
+2026-05-19 16:12:49,875 - INFO - Locating Chrome…
+2026-05-19 16:12:49,877 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 16:12:50,873 - INFO - Logging in…
+2026-05-19 16:12:52,699 - INFO - Waiting for two-step authentication...
+2026-05-19 16:12:58,437 - INFO - Submitting dashboard flow…
+2026-05-19 16:13:02,261 - INFO - Stopping...
+2026-05-19 16:13:02,356 - INFO - Run stopped.

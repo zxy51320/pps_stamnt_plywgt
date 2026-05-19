@@ -1,4 +1,5 @@
 # pages/dashboard_page.py
+from ast import stmt
 import time, re, logging, os
 from playwright.sync_api import Page
 from datetime import datetime
@@ -25,28 +26,30 @@ class DashboardPage:
             logging.error(f"Can not find MID {mid}")
             raise e
 
-    def download_pdf(self,mid: str):
+    def download_pdf(self,mid: str, log_cb):
         try:
             time.sleep(2)  # Wait for the page to load
             self.page.get_by_role("tab", name="SUMMARY").click()
+            """
             if self.page.get_by_text("Closed").first.is_visible():
-                logging.warning(f"Merchant {mid} is closed, skipping download.")
+                log_cb(f"Merchant {mid} is closed, skipping download.")
                 return "closed", "Merchant closed"
+            """
             loc = self.page.get_by_text(re.compile(r"\b[A-Z]{2}\s+\d{5}(?:-\d{4})?\b")).nth(1)
             text = loc.inner_text()
             loc_zip = re.search(r'\b(?:[A-Z]{2})\s+(\d{5})(?:-\d{4})?\b', text).group(1)
-            logging.info(f"Location ZIP for MID {mid}: {loc_zip}")
+            log_cb(f"Location ZIP for MID {mid}: {loc_zip}")
             # Determine the tab to click based on the MID prefix
             first_four = mid[:4]
             if first_four == "8739" or first_four == "5631":
                 self.page.get_by_role("tab", name="TSYS").click()
-                logging.info(f"MID: {mid} for TSYS")
+                log_cb(f"MID: {mid} for TSYS")
             elif first_four == "8152":
                 self.page.get_by_role("tab", name="Fiserv North").click()
-                logging.info(f"MID: {mid} for Fiserv North")
+                log_cb(f"MID: {mid} for Fiserv North")
             elif first_four == "5544":
                 self.page.get_by_role("tab", name="Fiserv - Omaha").click()
-                logging.info(f"MID: {mid} for Fiserv - Omaha")
+                log_cb(f"MID: {mid} for Fiserv - Omaha")
 
             self.page.get_by_role("tab", name="Reports").click()
 
@@ -62,7 +65,7 @@ class DashboardPage:
                     self.page.get_by_role("cell", name=f"{self.last_month_name}").click()
             except Exception:
                 msg = f"No {self.last_month_name} statement found for MID {mid}"
-                logging.error(msg)
+                log_cb(msg)
                 return "failed", msg
 
             time.sleep(5)
@@ -77,8 +80,15 @@ class DashboardPage:
                     expect(self.page.get_by_role("cell", name=f"MERCHANT : {mid}", exact=True)).to_be_visible(timeout=10000)
                     found = True
                 except Exception:
-                    found = False
-
+                    try:
+                        pattern = re.compile(
+                            rf"{mid[:4]}\s+{mid[4:8]}\s+{mid[-7:]}"
+                        )
+                        stmt = self.page.locator("div.src-components-statement-detail-styles--contentContainer pre")
+                        expect(stmt).to_contain_text(pattern, timeout=10000)
+                        found = True
+                    except Exception:
+                        found = False
             if found:
                 with self.page.expect_download() as download_info:
                     self.page.get_by_role("button", name="PDF").click()
@@ -93,17 +103,17 @@ class DashboardPage:
                 except OSError as e:
                     logging.warning(f"Failed to delete: {f"{self.last_month_name}_statements/{mid}.pdf"} -> {e}")
                 """
-                logging.info(f"Downloaded statement for MID {mid}")
+                log_cb(f"Downloaded statement for MID {mid}")
                 self.page.reload(wait_until="load")
                 return "downloaded", "ok"
             else:
                 msg = f"Cannot find the statement content for MID {mid}"
-                logging.error(msg)
+                log_cb(msg)
                 return "failed", msg
 
         except Exception as e:
             msg = f"Unexpected error for MID {mid}: {e}"
-            logging.error(msg)
+            log_cb(msg)
             return "failed", msg
         
     def encrypt_pdf(self, loc: str, password: str):
@@ -125,7 +135,7 @@ class DashboardPage:
         # Location Search Tab
         self.page.get_by_role("textbox", name="Select a Partner").click()
         if "China" in data['Department']:
-            if "Cash Discount" in data['Pricing Type']:
+            if "Cash Discount" in data['Pricing Type'] or "Dual Pricing" in data['Pricing Type']:
                 self.page.get_by_role("textbox", name="Select a Partner").fill("Team FZ (CD)")
                 time.sleep(1)
                 self.page.get_by_text("P542582451267889").click()
@@ -146,8 +156,11 @@ class DashboardPage:
             self.page.get_by_role("textbox", name="Location Name (DBA)").fill(data['DBA'])
             self.page.get_by_role("textbox", name="Street (PO Box not allowed)").fill(data['Street'])
             self.page.get_by_role("textbox", name="City").fill(data['City'])
-            self.page.get_by_role("textbox", name="State").fill(data['State'])
-            self.page.get_by_role("option", name=data['State']).click()
+            try:
+                self.page.get_by_role("textbox", name="State").fill(data['State'])
+                self.page.get_by_role("option", name=data['State']).click()
+            except:
+                pass
             self.page.get_by_role("textbox", name="Postal Code").fill(data['ZIP'])
             self.page.get_by_placeholder("Business Established").type(data['Yesterday'])
             self.page.get_by_role("textbox", name="Location Phone").fill(data['Business Phone'])
@@ -156,7 +169,7 @@ class DashboardPage:
                 self.page.get_by_role("option", name="Services").click()
                 self.page.get_by_role("textbox", name="Industry Type").fill("Massage")
                 self.page.get_by_role("option", name="- MASSAGE PARLORS").click()
-            else:
+            elif "Restaurant" in data['Business Type']:
                 self.page.get_by_role("textbox", name="Market Segment").fill("Restaurant")
                 self.page.get_by_role("option", name="Restaurant").click()
                 self.page.get_by_role("textbox", name="Industry Type").fill("- EATING PLACES, RESTAURANTS")
@@ -217,12 +230,12 @@ class DashboardPage:
                 else:
                     self.page.get_by_role("row", name="Sale : Any: MasterCard,").get_by_role("textbox").fill(data['V/M/D Rate(_.__%)'])
                     self.page.get_by_role("cell", name="35.00 Per Event ($)").get_by_role("textbox").fill(data['Monthly Fee'])
-            elif data['Pricing Type'] == "Cash Discount (by Percentage %)":
+            elif data['Pricing Type'] == "Cash Discount (by Percentage %)" or data['Pricing Type'] == "Dual Pricing (by Percentage %)":
                 self.page.get_by_role("option", name="True Flat Rate").click()
                 __cdPrice = f"{(1 - (100 / (100 + float(data['Cash Discount Rate']))))*100:.2f}"
                 self.page.get_by_role("row", name="Sale : Any: MasterCard,").get_by_role("textbox").fill(__cdPrice)
                 self.page.get_by_role("cell", name="35.00 Per Event ($)").get_by_role("textbox").fill(data['Monthly Fee'])
-            elif data['Pricing Type'] == "Cash Discount (by Flat Fee $)":
+            elif data['Pricing Type'] == "Cash Discount (by Flat Fee $)" or data['Pricing Type'] == "Dual Pricing (by Flat Fee $)":
                 self.page.get_by_role("option", name="True Flat Rate").click()
                 self.page.get_by_role("row", name="Sale : Any: MasterCard,").get_by_role("button").first.click()
                 self.page.get_by_role("button", name="Percent (%)").click()
@@ -264,8 +277,11 @@ class DashboardPage:
                 self.page.get_by_role("option", name="Individual or Sole Proprietor", exact=True).click()
             
             self.page.get_by_role("textbox", name="Legal Entity Email").fill(data['Email'])
-            self.page.get_by_role("textbox", name="State of Organization").fill(data['State'])
-            self.page.get_by_role("option", name=data['State']).click()
+            try:
+                self.page.get_by_role("textbox", name="State of Organization").fill(data['State'])
+                self.page.get_by_role("option", name=data['State']).click()
+            except:
+                pass
             self.page.get_by_placeholder("Entity Formation Date").type(data['Yesterday'])
             self.page.get_by_role("textbox", name="Tax Id Type *").click()
             if len(data['Tax ID'].split('-')[0]) == 2:
@@ -281,8 +297,11 @@ class DashboardPage:
             self.page.get_by_role("textbox", name="Last Name").fill(data['last_name'])
             self.page.get_by_role("textbox", name="Home Address (PO Box not").fill(data['Home Street'])
             self.page.get_by_role("textbox", name="City").fill(data['Home City'])
-            self.page.get_by_role("button", name="Open").first.click()
-            self.page.get_by_role("option", name=data['Home State']).click()
+            try:
+                self.page.get_by_role("button", name="Open").first.click()
+                self.page.get_by_role("option", name=data['Home State']).click()
+            except:
+                pass
             self.page.get_by_role("textbox", name="Postal Code").fill(data['Home ZIP'])
             self.page.get_by_placeholder("Date of Birth").type(data['Date of Birth'])
             self.page.get_by_role("textbox", name="Email Address").fill(data['Email'])
@@ -290,8 +309,11 @@ class DashboardPage:
             self.page.get_by_role("textbox", name="SSN").fill(data['Social Security Number'])
             if len(data['Driver License Number']) > 1:
                 self.page.get_by_role("textbox", name="Driver's License").fill(data['Driver License Number'])
-                self.page.get_by_role("button", name="Open").nth(3).click()
-                self.page.get_by_role("option", name=data['State Issued']).click()
+                try:
+                    self.page.get_by_role("button", name="Open").nth(3).click()
+                    self.page.get_by_role("option", name=data['State Issued']).click()
+                except:
+                    pass
             logging.info('Ownership Tab finished')
             self.page.get_by_role("button", name="Save").click()
             time.sleep(3)

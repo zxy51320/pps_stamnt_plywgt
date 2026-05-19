@@ -1,0 +1,1061 @@
+2026-01-28 12:44:47,602 - INFO - CSV selected. Click [Run] to start.
+2026-01-28 12:47:05,239 - INFO - Running… (a browser window will open)
+2026-01-28 12:47:07,551 - INFO - Locating Chrome…
+2026-01-28 12:47:07,559 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-01-28 12:47:08,585 - INFO - Logging in…
+2026-01-28 12:47:11,289 - INFO - Submitting dashboard flow…
+2026-01-28 12:47:25,600 - INFO - Location Tab finished
+2026-01-28 12:47:49,372 - INFO - Added TSYS and MX_Merchant
+2026-01-28 12:47:52,143 - INFO - Setting Rates
+2026-01-28 12:47:53,077 - INFO - Setting Bank Info
+2026-01-28 12:47:57,228 - INFO - Products Tab finished
+2026-01-28 12:48:07,941 - INFO - Legal Tab finished
+2026-01-28 12:48:15,520 - INFO - Ownership Tab finished
+2026-01-28 12:48:19,125 - INFO - Done.
+2026-01-28 12:48:19,321 - INFO - Task completed \u2705
+2026-02-02 11:52:19,956 - INFO - CSV selected. Click [Run] to start.
+2026-02-02 11:52:23,255 - INFO - Running… (a browser window will open)
+2026-02-02 11:52:25,103 - INFO - Locating Chrome…
+2026-02-02 11:52:25,112 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-02 11:52:26,014 - INFO - Logging in…
+2026-02-02 11:52:28,203 - INFO - Submitting dashboard flow…
+2026-02-02 11:52:42,371 - INFO - Location Tab finished
+2026-02-02 11:53:06,761 - INFO - Added TSYS and MX_Merchant
+2026-02-02 11:53:09,727 - INFO - Setting Rates
+2026-02-02 11:53:10,563 - INFO - Setting Bank Info
+2026-02-02 11:53:16,398 - INFO - Products Tab finished
+2026-02-02 11:53:31,591 - INFO - Legal Tab finished
+2026-02-02 11:53:39,289 - INFO - Ownership Tab finished
+2026-02-02 11:53:42,768 - INFO - Done.
+2026-02-02 11:53:42,994 - INFO - Task completed \u2705
+2026-02-02 12:44:41,081 - INFO - CSV selected. Click [Run] to start.
+2026-02-02 12:44:46,813 - INFO - Running… (a browser window will open)
+2026-02-02 12:44:48,701 - INFO - Locating Chrome…
+2026-02-02 12:44:48,709 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-02 12:44:49,864 - INFO - Logging in…
+2026-02-02 12:44:52,318 - INFO - Submitting dashboard flow…
+2026-02-02 12:45:07,573 - INFO - Location Tab finished
+2026-02-02 12:45:31,902 - INFO - Added TSYS and MX_Merchant
+2026-02-02 12:45:34,468 - INFO - Setting Rates
+2026-02-02 12:45:35,375 - INFO - Setting Bank Info
+2026-02-02 12:45:39,494 - INFO - Products Tab finished
+2026-02-02 12:45:53,162 - INFO - Legal Tab finished
+2026-02-02 12:46:00,817 - INFO - Ownership Tab finished
+2026-02-02 12:46:04,357 - INFO - Done.
+2026-02-02 12:46:04,558 - INFO - Task completed \u2705
+2026-02-03 13:11:54,454 - INFO - CSV selected. Click [Run] to start.
+2026-02-03 13:12:08,525 - INFO - Running… (a browser window will open)
+2026-02-03 13:12:10,498 - INFO - Locating Chrome…
+2026-02-03 13:12:10,504 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-03 13:12:11,627 - INFO - Logging in…
+2026-02-03 13:12:14,034 - INFO - Submitting dashboard flow…
+2026-02-03 13:12:29,566 - INFO - Location Tab finished
+2026-02-03 13:12:53,525 - INFO - Added TSYS and MX_Merchant
+2026-02-03 13:12:55,997 - INFO - Setting Rates
+2026-02-03 13:12:56,927 - INFO - Setting Bank Info
+2026-02-03 13:13:00,814 - INFO - Products Tab finished
+2026-02-03 13:13:12,731 - INFO - Legal Tab finished
+2026-02-03 13:13:21,290 - INFO - Ownership Tab finished
+2026-02-03 13:13:24,971 - INFO - Done.
+2026-02-03 13:13:25,225 - INFO - Task completed \u2705
+2026-02-05 11:05:51,347 - INFO - CSV selected. Click [Run] to start.
+2026-02-05 11:05:54,197 - INFO - Running… (a browser window will open)
+2026-02-05 11:05:56,400 - INFO - Locating Chrome…
+2026-02-05 11:05:56,410 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-05 11:05:57,591 - INFO - Logging in…
+2026-02-05 11:06:00,052 - INFO - Submitting dashboard flow…
+2026-02-05 11:06:15,650 - INFO - Location Tab finished
+2026-02-05 11:06:43,109 - INFO - Added TSYS and MX_Merchant
+2026-02-05 11:06:46,214 - INFO - Setting Rates
+2026-02-05 11:06:47,130 - INFO - Setting Bank Info
+2026-02-05 11:06:51,044 - INFO - Products Tab finished
+2026-02-05 11:07:02,043 - INFO - Legal Tab finished
+2026-02-05 11:07:10,699 - INFO - Ownership Tab finished
+2026-02-05 11:07:14,221 - INFO - Done.
+2026-02-05 11:07:14,409 - INFO - Task completed \u2705
+2026-02-13 15:45:28,932 - INFO - CSV selected. Click [Run] to start.
+2026-02-13 15:45:30,213 - INFO - Running… (a browser window will open)
+2026-02-13 15:45:32,520 - INFO - Locating Chrome…
+2026-02-13 15:45:32,527 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-13 15:45:33,714 - INFO - Logging in…
+2026-02-13 15:45:58,612 - INFO - Submitting dashboard flow…
+2026-02-13 15:46:28,933 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 280, in worker
+  File "new_app.py", line 145, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 108, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-02-13 15:46:29,107 - INFO - Run failed \u274c
+2026-02-13 15:46:35,214 - INFO - Running… (a browser window will open)
+2026-02-13 15:46:36,032 - INFO - Locating Chrome…
+2026-02-13 15:46:36,041 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-13 15:46:36,874 - INFO - Logging in…
+2026-02-13 15:46:38,866 - INFO - Submitting dashboard flow…
+2026-02-13 15:47:14,283 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    42 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 280, in worker
+  File "new_app.py", line 145, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 112, in new_app
+    self.page.get_by_role("textbox", name="Select a Partner").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    42 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+
+2026-02-13 15:47:14,285 - INFO - Run failed \u274c
+2026-02-13 15:47:18,511 - INFO - Running… (a browser window will open)
+2026-02-13 15:47:19,656 - INFO - Locating Chrome…
+2026-02-13 15:47:19,663 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-13 15:47:20,662 - INFO - Logging in…
+2026-02-13 15:47:22,896 - INFO - Submitting dashboard flow…
+2026-02-13 15:47:36,204 - INFO - Location Tab finished
+2026-02-13 15:48:00,699 - INFO - Added TSYS and MX_Merchant
+2026-02-13 15:48:03,744 - INFO - Setting Rates
+2026-02-13 15:48:04,813 - INFO - Setting Bank Info
+2026-02-13 15:48:08,985 - INFO - Products Tab finished
+2026-02-13 15:48:21,368 - INFO - Legal Tab finished
+2026-02-13 15:48:28,409 - INFO - Ownership Tab finished
+2026-02-13 15:48:31,840 - INFO - Done.
+2026-02-13 15:48:31,859 - INFO - Task completed \u2705
+2026-02-17 10:37:32,633 - INFO - CSV selected. Click [Run] to start.
+2026-02-17 10:37:41,067 - INFO - Running… (a browser window will open)
+2026-02-17 10:37:43,016 - INFO - Locating Chrome…
+2026-02-17 10:37:43,027 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-17 10:37:43,952 - INFO - Logging in…
+2026-02-17 10:37:46,245 - INFO - Submitting dashboard flow…
+2026-02-17 10:38:00,603 - INFO - Location Tab finished
+2026-02-17 10:38:25,582 - INFO - Added TSYS and MX_Merchant
+2026-02-17 10:38:28,749 - INFO - Setting Rates
+2026-02-17 10:38:29,575 - INFO - Setting Bank Info
+2026-02-17 10:38:33,421 - INFO - Products Tab finished
+2026-02-17 10:38:46,451 - INFO - Legal Tab finished
+2026-02-17 10:38:54,629 - INFO - Ownership Tab finished
+2026-02-17 10:38:58,170 - INFO - Done.
+2026-02-17 10:38:58,365 - INFO - Task completed \u2705
+2026-02-18 11:20:55,071 - INFO - CSV selected. Click [Run] to start.
+2026-02-18 11:20:57,464 - INFO - Running… (a browser window will open)
+2026-02-18 11:20:59,403 - INFO - Locating Chrome…
+2026-02-18 11:20:59,410 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-18 11:21:00,331 - INFO - Logging in…
+2026-02-18 11:21:02,791 - INFO - Submitting dashboard flow…
+2026-02-18 11:21:17,485 - INFO - Location Tab finished
+2026-02-18 11:21:43,719 - INFO - Added TSYS and MX_Merchant
+2026-02-18 11:21:46,748 - INFO - Setting Rates
+2026-02-18 11:21:48,013 - INFO - Setting Bank Info
+2026-02-18 11:21:52,569 - INFO - Products Tab finished
+2026-02-18 11:22:05,174 - INFO - Legal Tab finished
+2026-02-18 11:22:12,897 - INFO - Ownership Tab finished
+2026-02-18 11:22:16,365 - INFO - Done.
+2026-02-18 11:22:16,570 - INFO - Task completed \u2705
+2026-02-19 13:47:09,870 - INFO - CSV selected. Click [Run] to start.
+2026-02-19 13:48:23,866 - INFO - Running… (a browser window will open)
+2026-02-19 13:48:25,854 - INFO - Locating Chrome…
+2026-02-19 13:48:25,861 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-19 13:48:26,814 - INFO - Logging in…
+2026-02-19 13:48:29,415 - INFO - Submitting dashboard flow…
+2026-02-19 13:48:44,050 - INFO - Location Tab finished
+2026-02-19 13:49:11,765 - INFO - Added TSYS and MX_Merchant
+2026-02-19 13:49:14,832 - INFO - Setting Rates
+2026-02-19 13:49:15,834 - INFO - Setting Bank Info
+2026-02-19 13:49:19,559 - INFO - Products Tab finished
+2026-02-19 13:49:31,337 - INFO - Legal Tab finished
+2026-02-19 13:49:38,064 - INFO - Ownership Tab finished
+2026-02-19 13:49:41,556 - INFO - Done.
+2026-02-19 13:49:41,756 - INFO - Task completed \u2705
+2026-02-19 16:24:31,479 - INFO - CSV selected. Click [Run] to start.
+2026-02-19 16:24:32,322 - INFO - Running… (a browser window will open)
+2026-02-19 16:24:34,168 - INFO - Locating Chrome…
+2026-02-19 16:24:34,175 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-19 16:24:35,042 - INFO - Logging in…
+2026-02-19 16:24:37,259 - INFO - Submitting dashboard flow…
+2026-02-19 16:24:50,834 - INFO - Location Tab finished
+2026-02-19 16:25:15,388 - INFO - Added TSYS and MX_Merchant
+2026-02-19 16:25:18,334 - INFO - Setting Rates
+2026-02-19 16:25:19,324 - INFO - Setting Bank Info
+2026-02-19 16:25:23,026 - INFO - Products Tab finished
+2026-02-19 16:25:35,567 - INFO - Legal Tab finished
+2026-02-19 16:25:45,216 - INFO - Ownership Tab finished
+2026-02-19 16:25:48,652 - INFO - Done.
+2026-02-19 16:25:48,825 - INFO - Task completed \u2705
+2026-02-24 11:43:44,636 - INFO - CSV selected. Click [Run] to start.
+2026-02-24 11:43:47,559 - INFO - Running… (a browser window will open)
+2026-02-24 11:43:49,234 - INFO - Locating Chrome…
+2026-02-24 11:43:49,241 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-24 11:43:50,526 - INFO - Logging in…
+2026-02-24 11:43:52,868 - INFO - Submitting dashboard flow…
+2026-02-24 11:44:07,234 - ERROR - Error: Locator.click: Error: strict mode violation: get_by_role("option", name="Virginia") resolved to 2 elements:
+    1) <li tabindex="-1" role="option" data-option-index="0" aria-disabled="false" aria-selected="false" id="mui-4865-option-0" class="MuiAutocomplete-option">Virginia</li> aka get_by_role("option", name="Virginia", exact=True)
+    2) <li tabindex="-1" role="option" data-option-index="1" aria-disabled="false" aria-selected="false" id="mui-4865-option-1" class="MuiAutocomplete-option">West Virginia</li> aka get_by_role("option", name="West Virginia")
+
+Call log:
+  - waiting for get_by_role("option", name="Virginia")
+. Save draft befor exit
+2026-02-24 11:44:37,584 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Save")
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 280, in worker
+  File "new_app.py", line 145, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 286, in new_app
+    self.page.get_by_role("button", name="Save").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Save")
+
+
+2026-02-24 11:44:37,756 - INFO - Run failed \u274c
+2026-02-24 11:51:08,646 - INFO - CSV selected. Click [Run] to start.
+2026-02-24 11:51:27,284 - INFO - CSV selected. Click [Run] to start.
+2026-02-27 11:37:27,427 - INFO - CSV selected. Click [Run] to start.
+2026-02-27 11:37:32,612 - INFO - Running… (a browser window will open)
+2026-02-27 11:37:34,187 - INFO - Locating Chrome…
+2026-02-27 11:37:34,196 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-27 11:37:35,308 - INFO - Logging in…
+2026-02-27 11:37:37,499 - INFO - Submitting dashboard flow…
+2026-02-27 11:37:52,639 - INFO - Location Tab finished
+2026-02-27 11:38:16,280 - INFO - Added TSYS and MX_Merchant
+2026-02-27 11:38:19,430 - INFO - Setting Rates
+2026-02-27 11:38:20,326 - INFO - Setting Bank Info
+2026-02-27 11:38:24,816 - INFO - Products Tab finished
+2026-02-27 11:38:36,802 - INFO - Legal Tab finished
+2026-02-27 11:38:44,063 - INFO - Ownership Tab finished
+2026-02-27 11:38:47,678 - INFO - Done.
+2026-02-27 11:38:47,886 - INFO - Task completed \u2705
+2026-03-02 12:24:07,367 - INFO - CSV selected. Click [Run] to start.
+2026-03-02 12:24:08,142 - INFO - Running… (a browser window will open)
+2026-03-02 12:24:09,665 - INFO - Locating Chrome…
+2026-03-02 12:24:09,674 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-02 12:24:10,543 - INFO - Logging in…
+2026-03-02 12:24:13,712 - INFO - Submitting dashboard flow…
+2026-03-02 12:24:23,979 - ERROR - Runtime error:
+Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    4 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 134, in new_app
+    self.page.get_by_role("textbox", name="Select a Partner").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+  File "playwright\_impl\_locator.py", line 160, in click
+  File "playwright\_impl\_frame.py", line 521, in click
+  File "playwright\_impl\_connection.py", line 69, in send
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+playwright._impl._errors.TargetClosedError: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    4 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+
+
+2026-03-02 12:24:24,144 - INFO - Run failed \u274c
+2026-03-05 13:19:20,965 - INFO - CSV selected. Click [Run] to start.
+2026-03-05 13:19:26,778 - INFO - Running… (a browser window will open)
+2026-03-05 13:19:28,284 - INFO - Locating Chrome…
+2026-03-05 13:19:28,291 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-05 13:19:29,181 - INFO - Logging in…
+2026-03-05 13:19:32,511 - INFO - Submitting dashboard flow…
+2026-03-05 13:19:49,825 - INFO - Location Tab finished
+2026-03-05 13:20:16,605 - INFO - Added TSYS and MX_Merchant
+2026-03-05 13:20:19,549 - INFO - Setting Rates
+2026-03-05 13:20:20,547 - INFO - Setting Bank Info
+2026-03-05 13:20:24,697 - INFO - Products Tab finished
+2026-03-05 13:20:37,907 - INFO - Legal Tab finished
+2026-03-05 13:20:45,902 - INFO - Ownership Tab finished
+2026-03-05 13:20:49,449 - INFO - Done.
+2026-03-05 13:20:49,633 - INFO - Task completed \u2705
+2026-03-09 15:52:09,429 - INFO - CSV selected. Click [Run] to start.
+2026-03-09 15:52:13,904 - INFO - Running… (a browser window will open)
+2026-03-09 15:52:15,351 - INFO - Locating Chrome…
+2026-03-09 15:52:15,359 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-09 15:52:16,204 - INFO - Logging in…
+2026-03-09 15:52:18,887 - INFO - Submitting dashboard flow…
+2026-03-09 15:52:36,690 - INFO - Location Tab finished
+2026-03-09 15:53:03,231 - INFO - Added TSYS and MX_Merchant
+2026-03-09 15:53:06,101 - INFO - Setting Rates
+2026-03-09 15:53:07,130 - INFO - Setting Bank Info
+2026-03-09 15:53:13,012 - INFO - Products Tab finished
+2026-03-09 15:53:26,739 - INFO - Legal Tab finished
+2026-03-09 15:53:34,312 - INFO - Ownership Tab finished
+2026-03-09 15:53:37,818 - INFO - Done.
+2026-03-09 15:53:38,032 - INFO - Task completed \u2705
+2026-03-10 12:59:09,600 - INFO - CSV selected. Click [Run] to start.
+2026-03-10 13:00:01,828 - INFO - Running… (a browser window will open)
+2026-03-10 13:00:03,409 - INFO - Locating Chrome…
+2026-03-10 13:00:03,417 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-10 13:00:04,672 - INFO - Logging in…
+2026-03-10 13:00:07,954 - INFO - Submitting dashboard flow…
+2026-03-10 13:00:46,911 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    44 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 134, in new_app
+    self.page.get_by_role("textbox", name="Select a Partner").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    44 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+
+2026-03-10 13:00:47,102 - INFO - Run failed \u274c
+2026-03-10 13:04:11,975 - INFO - CSV selected. Click [Run] to start.
+2026-03-10 13:04:12,649 - INFO - Running… (a browser window will open)
+2026-03-10 13:04:13,523 - INFO - Locating Chrome…
+2026-03-10 13:04:13,531 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-10 13:04:14,488 - INFO - Logging in…
+2026-03-10 13:04:17,892 - INFO - Submitting dashboard flow…
+2026-03-10 13:04:33,866 - INFO - Location Tab finished
+2026-03-10 13:04:58,875 - INFO - Added TSYS and MX_Merchant
+2026-03-10 13:05:02,034 - INFO - Setting Rates
+2026-03-10 13:05:04,430 - INFO - Setting Bank Info
+2026-03-10 13:05:08,934 - INFO - Products Tab finished
+2026-03-10 13:05:20,538 - INFO - Legal Tab finished
+2026-03-10 13:05:29,303 - INFO - Ownership Tab finished
+2026-03-10 13:05:32,899 - INFO - Done.
+2026-03-10 13:05:32,920 - INFO - Task completed \u2705
+2026-03-11 11:53:22,210 - INFO - CSV selected. Click [Run] to start.
+2026-03-11 11:53:23,313 - INFO - Running… (a browser window will open)
+2026-03-11 11:53:24,928 - INFO - Locating Chrome…
+2026-03-11 11:53:24,936 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-11 11:53:26,306 - INFO - Logging in…
+2026-03-11 11:53:29,876 - INFO - Submitting dashboard flow…
+2026-03-11 11:53:48,332 - INFO - Location Tab finished
+2026-03-11 11:54:14,168 - INFO - Added TSYS and MX_Merchant
+2026-03-11 11:54:16,520 - INFO - Setting Rates
+2026-03-11 11:54:17,512 - INFO - Setting Bank Info
+2026-03-11 11:54:21,642 - INFO - Products Tab finished
+2026-03-11 11:54:34,080 - INFO - Legal Tab finished
+2026-03-11 11:54:40,898 - INFO - Ownership Tab finished
+2026-03-11 11:54:44,343 - INFO - Done.
+2026-03-11 11:54:44,539 - INFO - Task completed \u2705
+2026-03-17 11:49:19,057 - INFO - CSV selected. Click [Run] to start.
+2026-03-17 11:49:19,565 - INFO - Running… (a browser window will open)
+2026-03-17 11:49:21,479 - INFO - Locating Chrome…
+2026-03-17 11:49:21,488 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 11:49:22,467 - INFO - Logging in…
+2026-03-17 11:49:26,589 - INFO - Submitting dashboard flow…
+2026-03-17 11:49:57,059 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-03-17 11:49:57,385 - INFO - Run failed \u274c
+2026-03-17 11:54:19,839 - INFO - CSV selected. Click [Run] to start.
+2026-03-17 11:54:20,452 - INFO - Running… (a browser window will open)
+2026-03-17 11:54:22,047 - INFO - Locating Chrome…
+2026-03-17 11:54:22,057 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 11:54:22,912 - INFO - Logging in…
+2026-03-17 11:54:25,186 - INFO - Submitting dashboard flow…
+2026-03-17 11:54:38,767 - ERROR - Runtime error:
+Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-03-17 11:54:38,940 - INFO - Run failed \u274c
+2026-03-17 11:54:42,578 - INFO - Please re-enter credentials.
+2026-03-17 11:55:13,331 - INFO - New credentials saved. You can now click [Run].
+2026-03-17 16:59:25,105 - INFO - CSV selected. Click [Run] to start.
+2026-03-17 16:59:25,978 - INFO - Running… (a browser window will open)
+2026-03-17 16:59:27,545 - INFO - Locating Chrome…
+2026-03-17 16:59:27,552 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 16:59:28,568 - INFO - Logging in…
+2026-03-17 16:59:30,889 - INFO - Submitting dashboard flow…
+2026-03-17 17:00:06,934 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    44 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 134, in new_app
+    self.page.get_by_role("textbox", name="Select a Partner").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Select a Partner")
+    - locator resolved to <input value="" type="text" autocomplete="off" aria-invalid="false" placeholder="Select a Partner" class="MuiInputBase-input MuiOutlinedInput-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    44 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="src-components-wait-spinner-styles--spinnercontainer src-components-wait-spinner-styles--visible">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+
+2026-03-17 17:00:07,116 - INFO - Run failed \u274c
+2026-03-17 17:00:45,261 - INFO - Running… (a browser window will open)
+2026-03-17 17:00:46,346 - INFO - Locating Chrome…
+2026-03-17 17:00:46,355 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-17 17:00:47,383 - INFO - Logging in…
+2026-03-17 17:00:49,778 - INFO - Submitting dashboard flow…
+2026-03-17 17:01:07,872 - INFO - Location Tab finished
+2026-03-17 17:01:32,981 - INFO - Added TSYS and MX_Merchant
+2026-03-17 17:01:35,602 - INFO - Setting Rates
+2026-03-17 17:01:36,660 - INFO - Setting Bank Info
+2026-03-17 17:01:41,357 - INFO - Products Tab finished
+2026-03-17 17:01:54,109 - INFO - Legal Tab finished
+2026-03-17 17:02:01,513 - INFO - Ownership Tab finished
+2026-03-17 17:02:05,010 - INFO - Done.
+2026-03-17 17:02:05,037 - INFO - Task completed \u2705
+2026-03-18 12:55:16,589 - INFO - CSV selected. Click [Run] to start.
+2026-03-18 12:55:17,256 - INFO - Running… (a browser window will open)
+2026-03-18 12:55:18,971 - INFO - Locating Chrome…
+2026-03-18 12:55:18,978 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-18 12:55:20,126 - INFO - Logging in…
+2026-03-18 12:55:22,638 - INFO - Submitting dashboard flow…
+2026-03-18 12:55:39,644 - INFO - Location Tab finished
+2026-03-18 12:56:07,999 - INFO - Added TSYS and MX_Merchant
+2026-03-18 12:56:10,577 - INFO - Setting Rates
+2026-03-18 12:56:11,462 - INFO - Setting Bank Info
+2026-03-18 12:56:16,145 - INFO - Products Tab finished
+2026-03-18 12:56:30,832 - INFO - Legal Tab finished
+2026-03-18 12:56:40,410 - INFO - Ownership Tab finished
+2026-03-18 12:56:43,937 - INFO - Done.
+2026-03-18 12:56:44,173 - INFO - Task completed \u2705
+2026-03-18 18:22:03,075 - INFO - CSV selected. Click [Run] to start.
+2026-03-18 18:22:07,605 - INFO - Running… (a browser window will open)
+2026-03-18 18:22:09,129 - INFO - Locating Chrome…
+2026-03-18 18:22:09,138 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-18 18:22:10,161 - INFO - Logging in…
+2026-03-18 18:22:12,253 - INFO - Submitting dashboard flow…
+2026-03-18 18:22:28,327 - INFO - Location Tab finished
+2026-03-18 18:22:52,748 - INFO - Added TSYS and MX_Merchant
+2026-03-18 18:22:55,937 - INFO - Setting Rates
+2026-03-18 18:22:58,180 - INFO - Setting Bank Info
+2026-03-18 18:23:02,015 - INFO - Products Tab finished
+2026-03-18 18:23:14,048 - INFO - Legal Tab finished
+2026-03-18 18:23:20,900 - INFO - Ownership Tab finished
+2026-03-18 18:23:24,441 - INFO - Done.
+2026-03-18 18:23:24,633 - INFO - Task completed \u2705
+2026-03-27 13:18:22,370 - INFO - CSV selected. Click [Run] to start.
+2026-03-27 13:18:23,061 - INFO - Running… (a browser window will open)
+2026-03-27 13:18:24,605 - INFO - Locating Chrome…
+2026-03-27 13:18:24,613 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-27 13:18:25,982 - INFO - Logging in…
+2026-03-27 13:18:28,868 - INFO - Submitting dashboard flow…
+2026-03-27 13:18:48,176 - INFO - Location Tab finished
+2026-03-27 13:19:12,871 - INFO - Added TSYS and MX_Merchant
+2026-03-27 13:19:15,323 - INFO - Setting Rates
+2026-03-27 13:19:17,557 - INFO - Setting Bank Info
+2026-03-27 13:19:21,980 - INFO - Products Tab finished
+2026-03-27 13:19:35,879 - INFO - Legal Tab finished
+2026-03-27 13:19:43,636 - INFO - Ownership Tab finished
+2026-03-27 13:19:47,436 - INFO - Done.
+2026-03-27 13:19:47,689 - INFO - Task completed \u2705
+2026-03-31 11:36:45,841 - INFO - CSV selected. Click [Run] to start.
+2026-03-31 11:36:46,954 - INFO - Running… (a browser window will open)
+2026-03-31 11:36:48,866 - INFO - Locating Chrome…
+2026-03-31 11:36:48,876 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-03-31 11:36:50,156 - INFO - Logging in…
+2026-03-31 11:36:52,240 - INFO - Submitting dashboard flow…
+2026-03-31 11:37:09,576 - INFO - Location Tab finished
+2026-03-31 11:37:36,426 - INFO - Added TSYS and MX_Merchant
+2026-03-31 11:37:38,564 - INFO - Setting Rates
+2026-03-31 11:37:41,917 - INFO - Setting Bank Info
+2026-03-31 11:37:46,276 - INFO - Products Tab finished
+2026-03-31 11:37:58,908 - INFO - Legal Tab finished
+2026-03-31 11:38:06,611 - INFO - Ownership Tab finished
+2026-03-31 11:38:10,197 - INFO - Done.
+2026-03-31 11:38:10,410 - INFO - Task completed \u2705
+2026-04-01 14:54:46,105 - INFO - CSV selected. Click [Run] to start.
+2026-04-01 14:54:47,921 - INFO - Running… (a browser window will open)
+2026-04-01 14:54:49,730 - INFO - Locating Chrome…
+2026-04-01 14:54:49,738 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-04-01 14:54:51,237 - INFO - Logging in…
+2026-04-01 14:54:53,163 - INFO - Submitting dashboard flow…
+2026-04-01 14:55:07,610 - INFO - Location Tab finished
+2026-04-01 14:55:33,425 - INFO - Added TSYS and MX_Merchant
+2026-04-01 14:55:35,795 - INFO - Setting Rates
+2026-04-01 14:55:36,725 - INFO - Setting Bank Info
+2026-04-01 14:55:40,569 - INFO - Products Tab finished
+2026-04-01 14:55:51,806 - INFO - Legal Tab finished
+2026-04-01 14:55:59,909 - INFO - Ownership Tab finished
+2026-04-01 14:56:03,510 - INFO - Done.
+2026-04-01 14:56:03,734 - INFO - Task completed \u2705
+2026-04-02 15:29:13,956 - INFO - CSV selected. Click [Run] to start.
+2026-04-02 15:29:14,795 - INFO - Running… (a browser window will open)
+2026-04-02 15:29:16,956 - INFO - Locating Chrome…
+2026-04-02 15:29:16,965 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-04-02 15:29:18,772 - INFO - Logging in…
+2026-04-02 15:29:21,073 - INFO - Submitting dashboard flow…
+2026-04-02 15:29:38,108 - INFO - Location Tab finished
+2026-04-02 15:30:05,241 - INFO - Added TSYS and MX_Merchant
+2026-04-02 15:30:07,630 - INFO - Setting Rates
+2026-04-02 15:30:09,739 - INFO - Setting Bank Info
+2026-04-02 15:30:14,106 - INFO - Products Tab finished
+2026-04-02 15:30:26,788 - INFO - Legal Tab finished
+2026-04-02 15:30:36,336 - INFO - Ownership Tab finished
+2026-04-02 15:30:40,046 - INFO - Done.
+2026-04-02 15:30:40,281 - INFO - Task completed \u2705
+2026-04-06 12:21:30,214 - INFO - CSV selected. Click [Run] to start.
+2026-04-06 12:21:31,392 - INFO - Running… (a browser window will open)
+2026-04-06 12:21:33,099 - INFO - Locating Chrome…
+2026-04-06 12:21:33,106 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-04-06 12:21:34,291 - INFO - Logging in…
+2026-04-06 12:21:36,169 - INFO - Submitting dashboard flow…
+2026-04-06 12:22:05,997 - INFO - Location Tab finished
+2026-04-06 12:22:36,431 - INFO - Added TSYS and MX_Merchant
+2026-04-06 12:22:52,443 - INFO - Setting Rates
+2026-04-06 12:22:58,384 - INFO - Setting Bank Info
+2026-04-06 12:23:34,487 - ERROR - Error: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".src-components-form-combobox-styles--optionsContainer:visible").get_by_text("S80 (Class B PPS Build)")
+    - locator resolved to <div class="src-components-form-combobox-styles--option">S80 (Class B PPS Build) </div>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  - retrying click action
+    - waiting for element to be visible, enabled and stable
+  - element was detached from the DOM, retrying
+. Save draft befor exit
+2026-04-06 12:24:05,068 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Save")
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 320, in new_app
+    self.page.get_by_role("button", name="Save").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Save")
+
+
+2026-04-06 12:24:05,284 - INFO - Run failed \u274c
+2026-04-06 12:24:59,739 - INFO - Running… (a browser window will open)
+2026-04-06 12:25:01,149 - INFO - Locating Chrome…
+2026-04-06 12:25:01,159 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-04-06 12:25:02,342 - INFO - Logging in…
+2026-04-06 12:25:04,629 - INFO - Submitting dashboard flow…
+2026-04-06 12:25:22,092 - INFO - Location Tab finished
+2026-04-06 12:25:48,318 - INFO - Added TSYS and MX_Merchant
+2026-04-06 12:25:50,358 - INFO - Setting Rates
+2026-04-06 12:25:51,258 - INFO - Setting Bank Info
+2026-04-06 12:25:54,979 - INFO - Products Tab finished
+2026-04-06 12:26:08,577 - INFO - Legal Tab finished
+2026-04-06 12:26:16,358 - INFO - Ownership Tab finished
+2026-04-06 12:26:19,883 - INFO - Done.
+2026-04-06 12:26:19,905 - INFO - Task completed \u2705
+2026-04-14 12:37:47,822 - INFO - CSV selected. Click [Run] to start.
+2026-04-14 12:37:48,504 - INFO - Running… (a browser window will open)
+2026-04-14 12:37:50,165 - INFO - Locating Chrome…
+2026-04-14 12:37:50,173 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-04-14 12:37:51,301 - INFO - Logging in…
+2026-04-14 12:37:53,407 - INFO - Submitting dashboard flow…
+2026-04-14 12:38:09,340 - INFO - Location Tab finished
+2026-04-14 12:38:34,947 - INFO - Added TSYS and MX_Merchant
+2026-04-14 12:38:37,744 - INFO - Setting Rates
+2026-04-14 12:38:38,515 - INFO - Setting Bank Info
+2026-04-14 12:38:42,237 - INFO - Products Tab finished
+2026-04-14 12:38:53,539 - INFO - Legal Tab finished
+2026-04-14 12:39:01,309 - INFO - Ownership Tab finished
+2026-04-14 12:39:04,812 - INFO - Done.
+2026-04-14 12:39:05,006 - INFO - Task completed \u2705
+2026-04-24 13:14:41,703 - INFO - Please re-enter credentials.
+2026-04-24 13:15:06,700 - INFO - New credentials saved. You can now click [Run].
+2026-04-24 13:15:16,008 - INFO - CSV selected. Click [Run] to start.
+2026-04-24 13:15:16,584 - INFO - Running… (a browser window will open)
+2026-04-24 13:15:18,501 - INFO - Locating Chrome…
+2026-04-24 13:15:18,510 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-04-24 13:15:20,218 - INFO - Logging in…
+2026-04-24 13:15:22,138 - INFO - Submitting dashboard flow…
+2026-04-24 13:15:48,750 - INFO - Location Tab finished
+2026-04-24 13:16:15,719 - INFO - Added TSYS and MX_Merchant
+2026-04-24 13:16:18,494 - INFO - Setting Rates
+2026-04-24 13:16:19,571 - INFO - Setting Bank Info
+2026-04-24 13:16:23,291 - INFO - Products Tab finished
+2026-04-24 13:16:36,055 - INFO - Legal Tab finished
+2026-04-24 13:16:42,421 - INFO - Ownership Tab finished
+2026-04-24 13:16:45,929 - INFO - Done.
+2026-04-24 13:16:46,179 - INFO - Task completed \u2705
+2026-04-28 15:24:47,855 - INFO - CSV selected. Click [Run] to start.
+2026-04-28 15:24:48,451 - INFO - Running… (a browser window will open)
+2026-04-28 15:24:50,043 - INFO - Locating Chrome…
+2026-04-28 15:24:50,052 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-04-28 15:24:51,003 - INFO - Logging in…
+2026-04-28 15:24:53,041 - INFO - Submitting dashboard flow…
+2026-04-28 15:25:17,589 - INFO - Location Tab finished
+2026-04-28 15:25:43,839 - INFO - Added TSYS and MX_Merchant
+2026-04-28 15:25:46,661 - INFO - Setting Rates
+2026-04-28 15:25:47,506 - INFO - Setting Bank Info
+2026-04-28 15:25:51,343 - INFO - Products Tab finished
+2026-04-28 15:26:04,225 - INFO - Legal Tab finished
+2026-04-28 15:26:12,690 - INFO - Ownership Tab finished
+2026-04-28 15:26:16,965 - INFO - Done.
+2026-04-28 15:26:17,390 - INFO - Task completed \u2705
+2026-05-08 12:35:28,578 - INFO - CSV selected. Click [Run] to start.
+2026-05-08 12:35:30,157 - INFO - Running… (a browser window will open)
+2026-05-08 12:35:31,718 - INFO - Locating Chrome…
+2026-05-08 12:35:31,726 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-08 12:35:32,740 - INFO - Logging in…
+2026-05-08 12:35:34,672 - INFO - Submitting dashboard flow…
+2026-05-08 12:35:58,095 - INFO - Location Tab finished
+2026-05-08 12:36:25,625 - INFO - Added TSYS and MX_Merchant
+2026-05-08 12:36:27,694 - INFO - Setting Rates
+2026-05-08 12:36:28,624 - INFO - Setting Bank Info
+2026-05-08 12:36:32,573 - INFO - Products Tab finished
+2026-05-08 12:36:44,075 - INFO - Legal Tab finished
+2026-05-08 12:36:50,591 - INFO - Ownership Tab finished
+2026-05-08 12:36:54,118 - INFO - Done.
+2026-05-08 12:36:54,333 - INFO - Task completed \u2705
+2026-05-08 17:14:18,736 - INFO - CSV selected. Click [Run] to start.
+2026-05-08 17:14:20,310 - INFO - Running… (a browser window will open)
+2026-05-08 17:14:22,214 - INFO - Locating Chrome…
+2026-05-08 17:14:22,222 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-08 17:14:23,814 - INFO - Logging in…
+2026-05-08 17:14:25,613 - INFO - Submitting dashboard flow…
+2026-05-08 17:14:48,405 - INFO - Location Tab finished
+2026-05-08 17:15:15,424 - INFO - Added TSYS and MX_Merchant
+2026-05-08 17:15:17,644 - INFO - Setting Rates
+2026-05-08 17:15:18,505 - INFO - Setting Bank Info
+2026-05-08 17:15:22,112 - INFO - Products Tab finished
+2026-05-08 17:15:34,684 - INFO - Legal Tab finished
+2026-05-08 17:15:43,034 - INFO - Ownership Tab finished
+2026-05-08 17:15:46,690 - INFO - Done.
+2026-05-08 17:15:46,892 - INFO - Task completed \u2705
+2026-05-11 17:10:15,073 - INFO - CSV selected. Click [Run] to start.
+2026-05-11 17:10:16,064 - INFO - Running… (a browser window will open)
+2026-05-11 17:10:17,678 - INFO - Locating Chrome…
+2026-05-11 17:10:17,687 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-11 17:10:18,672 - INFO - Logging in…
+2026-05-11 17:10:20,546 - INFO - Submitting dashboard flow…
+2026-05-11 17:10:25,155 - INFO - Please re-enter credentials.
+2026-05-11 17:10:29,787 - ERROR - Runtime error:
+Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-05-11 17:10:29,979 - INFO - Run failed \u274c
+2026-05-11 17:10:55,043 - INFO - New credentials saved. You can now click [Run].
+2026-05-11 17:10:55,929 - INFO - Running… (a browser window will open)
+2026-05-11 17:10:56,812 - INFO - Locating Chrome…
+2026-05-11 17:10:56,820 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-11 17:10:57,696 - INFO - Logging in…
+2026-05-11 17:10:59,379 - INFO - Submitting dashboard flow…
+2026-05-11 17:11:29,750 - ERROR - Runtime error:
+Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+Traceback (most recent call last):
+  File "new_app.py", line 275, in worker
+  File "new_app.py", line 140, in run_playwright_flow
+  File "Pages\dashboard_page.py", line 130, in new_app
+    self.page.get_by_role("navigation").get_by_text("Merchant").click()
+  File "playwright\sync_api\_generated.py", line 15505, in click
+    self._sync(
+  File "playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "playwright\_impl\_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("navigation").get_by_text("Merchant")
+
+
+2026-05-11 17:11:29,753 - INFO - Run failed \u274c
+2026-05-11 17:11:32,358 - INFO - Running… (a browser window will open)
+2026-05-11 17:11:33,233 - INFO - Locating Chrome…
+2026-05-11 17:11:33,242 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-11 17:11:34,046 - INFO - Logging in…
+2026-05-11 17:11:35,912 - INFO - Submitting dashboard flow…
+2026-05-11 17:11:59,665 - INFO - Location Tab finished
+2026-05-11 17:12:26,233 - INFO - Added TSYS and MX_Merchant
+2026-05-11 17:12:28,980 - INFO - Setting Rates
+2026-05-11 17:12:30,003 - INFO - Setting Bank Info
+2026-05-11 17:12:33,652 - INFO - Products Tab finished
+2026-05-11 17:12:44,839 - INFO - Legal Tab finished
+2026-05-11 17:12:51,489 - INFO - Ownership Tab finished
+2026-05-11 17:12:55,233 - INFO - Done.
+2026-05-11 17:12:55,253 - INFO - Task completed \u2705
+2026-05-19 16:21:02,303 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 16:21:02,999 - INFO - Running... (a browser window will open)
+2026-05-19 16:21:05,170 - INFO - Locating Chrome…
+2026-05-19 16:21:05,171 - INFO - Launching Chrome at: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 16:21:06,066 - INFO - Logging in…
+2026-05-19 16:21:08,251 - INFO - Waiting for two-step authentication...
+2026-05-19 16:21:12,607 - INFO - Submitting dashboard flow…
+2026-05-19 16:21:14,007 - INFO - Stopping...
+2026-05-19 16:21:14,121 - INFO - Run stopped.

@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-Tkinter-based GUI wrapper:
-- Select a CSV file (uses only the first row, consistent with original logic).
-- Click "Run": if no stored credentials, prompt for username/password and save them in plaintext.
-- A "Forget / Re-enter Credentials" button deletes the stored credentials and immediately re-prompts.
-- Playwright automation runs in a background thread to keep the UI responsive.
-WARNING: Credentials are stored IN PLAINTEXT (for demo parity with your requirement).
+pyinstaller -F -w --name "PPS_New_Application" --hidden-import "playwright._impl._api_types" --collect-all playwright --collect-submodules playwright --add-data "Pages;Pages" new_app.py
 """
 
-import os, sys, subprocess, json, csv, logging, threading, traceback, shutil
+import os, json, csv, logging, multiprocessing, queue, threading, traceback, shutil
 from datetime import datetime, timedelta
 from pathlib import Path
-from tkinter import Tk, Button, Label, filedialog, messagebox, StringVar, simpledialog, ttk
+from tkinter import Tk, Button, Label, Toplevel, filedialog, messagebox, StringVar, simpledialog, ttk
 
 from playwright.sync_api import sync_playwright
 from Pages.login_page import LoginPage
 from Pages.dashboard_page import DashboardPage
-from typing import Optional
+from typing import Callable, Optional
+
+
+class FlowStopped(Exception):
+    pass
+
 
 def find_chrome_exe() -> Optional[str]:
     """
@@ -119,18 +119,39 @@ def delete_creds():
         return False
 
 # ------------- Playwright main flow -------------
-def run_playwright_flow(data: dict, username: str, password: str, log_cb, quantity: int):
+def run_playwright_flow(
+    data: dict,
+    username: str,
+    password: str,
+    log_cb,
+    quantity: int,
+    mfa_prompt_cb: Optional[Callable[[], bool]] = None,
+    stop_event: Optional[threading.Event] = None,
+    browser_cb: Optional[Callable[[Optional[object]], None]] = None,
+):
+    def check_stopped():
+        if stop_event and stop_event.is_set():
+            raise FlowStopped("Run stopped by user.")
+
+    browser = None
+    context = None
+
     with sync_playwright() as p:
+        check_stopped()
         log_cb("Locating Chrome…")
         chrome_path = find_chrome_exe()
         if not chrome_path:
             raise RuntimeError("Google Chrome not found on this system.")
 
         log_cb(f"Launching Chrome at: {chrome_path}")
+        check_stopped()
         browser = p.chromium.launch(
             headless=False,
             executable_path=chrome_path
         )
+        if browser_cb:
+            browser_cb(browser)
+        check_stopped()
         context = browser.new_context(accept_downloads=True, viewport={"width": 1440, "height": 800})
         page = context.new_page()
         page.set_default_timeout(30000)
@@ -141,12 +162,51 @@ def run_playwright_flow(data: dict, username: str, password: str, log_cb, quanti
         log_cb("Logging in…")
         login_page.login(username, password)
 
+        check_stopped()
+
+        if mfa_prompt_cb:
+            log_cb("Waiting for two-step authentication...")
+            if not mfa_prompt_cb():
+                raise FlowStopped("Run stopped by user.")
+
         log_cb("Submitting dashboard flow…")
+        check_stopped()
         dashboard.new_app(data, quantity)
 
+        check_stopped()
         context.close()
         browser.close()
+        if browser_cb:
+            browser_cb(None)
         log_cb("Done.")
+
+
+def run_playwright_worker(data, username, password, quantity, status_queue, stop_event, mfa_event):
+    def log_cb(msg: str):
+        status_queue.put(("status", msg))
+
+    def mfa_prompt_cb() -> bool:
+        status_queue.put(("mfa", None))
+        while not stop_event.is_set():
+            if mfa_event.wait(0.2):
+                return True
+        return False
+
+    try:
+        run_playwright_flow(
+            data,
+            username,
+            password,
+            log_cb,
+            quantity,
+            mfa_prompt_cb,
+            stop_event,
+        )
+        status_queue.put(("done", None))
+    except FlowStopped:
+        status_queue.put(("stopped", None))
+    except Exception as e:
+        status_queue.put(("error", f"Runtime error:\n{e}\n\n{traceback.format_exc()}"))
 
 # ------------- GUI -------------
 class App:
@@ -154,11 +214,18 @@ class App:
         self.root = root
         self.root.title(APP_TITLE)
         self.csv_path = None
+        self.worker_process = None
+        self.status_queue = None
+        self.stop_event = None
+        self.mfa_event = None
+        self.mfa_prompt_window = None
+        self.ui_thread_id = threading.get_ident()
 
         self.status = StringVar(value="Please select a CSV file, then click [Run].")
         self.csv_label = StringVar(value="CSV: Not selected")
 
-        Button(root, text="Select CSV", command=self.pick_csv, width=22).pack(pady=6)
+        self.select_csv_button = Button(root, text="Select CSV", command=self.pick_csv, width=22)
+        self.select_csv_button.pack(pady=6)
         Label(root, textvariable=self.csv_label, wraplength=480, justify="left").pack(pady=2)
 
         Label(root, text="Equipment Quantity").pack(pady=(8, 2))
@@ -171,8 +238,10 @@ class App:
         )
         self.qty_combo.pack(pady=2)
 
-        Button(root, text="Run", command=self.on_run, width=22).pack(pady=6)
-        Button(root, text="Forget / Re-enter Credentials", command=self.on_forget_and_reenter, width=22).pack(pady=2)
+        self.run_button = Button(root, text="Run", command=self.on_run, width=22)
+        self.run_button.pack(pady=6)
+        self.creds_button = Button(root, text="Forget / Re-enter Credentials", command=self.on_forget_and_reenter, width=22)
+        self.creds_button.pack(pady=2)
 
         Label(root, textvariable=self.status, fg="#444", wraplength=520, justify="left").pack(pady=8)
 
@@ -184,14 +253,74 @@ class App:
         )
 
     def set_status(self, msg: str):
-        self.status.set(msg)
-        self.root.update_idletasks()
         logging.info(msg)
+        if threading.get_ident() == self.ui_thread_id:
+            self.status.set(msg)
+            self.root.update_idletasks()
+        else:
+            self.root.after(0, lambda: self.status.set(msg))
         
     def set_qty_enabled(self, enabled: bool):
         # 运行时禁用，完成后恢复为只读下拉
         state = "readonly" if enabled else "disabled"
         self.qty_combo.configure(state=state)
+
+    def set_running_state(self, running: bool):
+        if running:
+            self.select_csv_button.configure(state="disabled")
+            self.creds_button.configure(state="disabled")
+            self.set_qty_enabled(False)
+            self.run_button.configure(text="Stop", command=self.on_stop, state="normal")
+        else:
+            self.select_csv_button.configure(state="normal")
+            self.creds_button.configure(state="normal")
+            self.set_qty_enabled(True)
+            self.run_button.configure(text="Run", command=self.on_run, state="normal")
+
+    def close_mfa_prompt(self):
+        if self.mfa_prompt_window:
+            try:
+                self.mfa_prompt_window.destroy()
+            except Exception:
+                pass
+            self.mfa_prompt_window = None
+
+    def show_two_step_auth_prompt(self):
+        if self.mfa_prompt_window:
+            return
+        if self.stop_event and self.stop_event.is_set():
+            return
+
+        dialog = Toplevel(self.root)
+        self.mfa_prompt_window = dialog
+        dialog.title("Two-Step Authentication")
+        dialog.resizable(False, False)
+        dialog.transient(self.root)
+        dialog.attributes("-topmost", True)
+
+        Label(
+            dialog,
+            text=(
+                "Please click Push on the browser page and complete the two-step authentication.\n\n"
+                "After authentication is complete, click OK here to continue."
+            ),
+            wraplength=360,
+            justify="left",
+            padx=18,
+            pady=14,
+        ).pack()
+
+        def finish():
+            if self.mfa_event:
+                self.mfa_event.set()
+            self.close_mfa_prompt()
+
+        Button(dialog, text="OK", command=finish, width=16).pack(pady=(0, 14))
+        dialog.protocol("WM_DELETE_WINDOW", finish)
+        dialog.update_idletasks()
+        x = self.root.winfo_rootx() + (self.root.winfo_width() - dialog.winfo_width()) // 2
+        y = self.root.winfo_rooty() + (self.root.winfo_height() - dialog.winfo_height()) // 2
+        dialog.geometry(f"+{max(x, 0)}+{max(y, 0)}")
 
     def pick_csv(self):
         path = filedialog.askopenfilename(
@@ -241,7 +370,21 @@ class App:
         else:
             self.set_status("Re-entry cancelled or incomplete. Credentials not updated.")
 
+    def on_stop(self):
+        if not self.stop_event:
+            return
+        self.stop_event.set()
+        self.set_status("Stopping...")
+        self.run_button.configure(state="disabled")
+        self.close_mfa_prompt()
+        if self.worker_process and self.worker_process.is_alive():
+            self.worker_process.terminate()
+
     def on_run(self):
+        if self.worker_process and self.worker_process.is_alive():
+            self.on_stop()
+            return
+
         if not self.csv_path:
             messagebox.showwarning("Notice", "Please select a CSV file first.")
             return
@@ -271,24 +414,73 @@ class App:
         except Exception:
             quantity = 1
         
-        self.set_qty_enabled(False) # Disable qty combobox during run
+        stop_event = multiprocessing.Event()
+        self.stop_event = stop_event
+        self.status_queue = multiprocessing.Queue()
+        self.mfa_event = multiprocessing.Event()
+        self.set_running_state(True)
 
-        # Background thread for Playwright flow
-        def worker():
+        self.set_status("Running... (a browser window will open)")
+        self.worker_process = multiprocessing.Process(
+            target=run_playwright_worker,
+            args=(data, username, password, quantity, self.status_queue, self.stop_event, self.mfa_event),
+            daemon=True,
+        )
+        self.worker_process.start()
+        self.root.after(100, self.poll_worker)
+
+    def poll_worker(self):
+        finished = False
+        error_msg = None
+
+        if self.status_queue:
+            while True:
+                try:
+                    kind, payload = self.status_queue.get_nowait()
+                except queue.Empty:
+                    break
+
+                if kind == "status":
+                    self.set_status(payload)
+                elif kind == "mfa":
+                    self.show_two_step_auth_prompt()
+                elif kind == "done":
+                    finished = True
+                elif kind == "stopped":
+                    self.set_status("Run stopped.")
+                    finished = True
+                elif kind == "error":
+                    error_msg = payload
+                    finished = True
+
+        if self.worker_process and self.worker_process.is_alive() and not finished:
+            self.root.after(100, self.poll_worker)
+            return
+
+        if self.stop_event and self.stop_event.is_set():
+            self.set_status("Run stopped.")
+        elif error_msg:
+            logging.error(error_msg)
+            self.set_status("Run failed ❌")
+            messagebox.showerror("Error", error_msg)
+        elif finished:
+            self.set_status("Task completed ✅")
+            messagebox.showinfo("Success", "Flow completed.")
+
+        self.cleanup_after_run()
+
+    def cleanup_after_run(self):
+        if self.worker_process:
             try:
-                self.set_status("Running… (a browser window will open)")
-                run_playwright_flow(data, username, password, self.set_status, quantity)
-                self.set_status("Task completed ✅")
-                messagebox.showinfo("Success", "Flow completed.")
-            except Exception as e:
-                err = f"Runtime error:\n{e}\n\n{traceback.format_exc()}"
-                logging.error(err)
-                self.set_status("Run failed ❌")
-                messagebox.showerror("Error", err)
-            finally:
-                self.root.after(0, lambda: self.set_qty_enabled(True)) # Restore qty combobox state
-                
-        threading.Thread(target=worker, daemon=True).start()
+                self.worker_process.join(timeout=0.2)
+            except Exception:
+                pass
+        self.close_mfa_prompt()
+        self.worker_process = None
+        self.status_queue = None
+        self.stop_event = None
+        self.mfa_event = None
+        self.set_running_state(False)
 
 def main():
     root = Tk()
@@ -297,4 +489,5 @@ def main():
     root.mainloop()
 
 if __name__ == "__main__":
+    multiprocessing.freeze_support()
     main()

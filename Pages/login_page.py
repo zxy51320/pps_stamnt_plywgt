@@ -6,7 +6,8 @@ class LoginPage:
         self.page = page
 
     def login(self, username: str, password: str):
-        self.page.goto("https://mxconnect.com/#/login")
+        #self.page.goto("https://mxconnect.com/#/login")
+        self.page.goto("https://sso.mxconnect.com/#/login")
         self.page.get_by_role("textbox", name="Username").fill(username)
         self.page.get_by_role("textbox", name="Password").fill(password)
         self.page.get_by_role("button", name="SIGN IN").click()

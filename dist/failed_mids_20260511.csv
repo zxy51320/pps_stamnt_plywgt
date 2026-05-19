@@ -1,0 +1,33 @@
+MID,Reason
+8739771582638498,"Loop exception: Locator.click: Timeout 3000ms exceeded.
+Call log:
+  - waiting for get_by_role(""tab"", name=""Merchant"", exact=True)
+    - locator resolved to <button role=""tab"" tabindex=""0"" type=""button"" aria-selected=""true"" class=""MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary jss11 Mui-selected MuiTab-fullWidth"">…</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+"
+8739797174073405,"Loop exception: Locator.click: Timeout 3000ms exceeded.
+Call log:
+  - waiting for get_by_role(""tab"", name=""Merchant"", exact=True)
+"
+8739733583773489,"Loop exception: Locator.click: Timeout 3000ms exceeded.
+Call log:
+  - waiting for get_by_role(""button"", name=""Go To"")
+    - locator resolved to <button tabindex=""0"" type=""button"" class=""MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"">…</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+"
+8739766565350215,"Loop exception: Locator.click: Timeout 3000ms exceeded.
+Call log:
+  - waiting for get_by_role(""tab"", name=""Merchant"", exact=True)
+    - locator resolved to <button role=""tab"" tabindex=""0"" type=""button"" aria-selected=""true"" class=""MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary jss11 Mui-selected MuiTab-fullWidth"">…</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - performing click action
+"

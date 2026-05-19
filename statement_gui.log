@@ -1,0 +1,90 @@
+2026-02-10 10:50:07,487 - INFO - CSV selected. Click [Run] to start.
+2026-02-10 10:50:08,138 - INFO - Running… (a browser window will open)
+2026-02-10 10:50:17,490 - INFO - Locating Chrome…
+2026-02-10 10:50:17,500 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-10 10:50:18,542 - INFO - Logging in…
+2026-02-10 10:50:20,944 - INFO - Downloading [1/1] MID 554402040703142…
+2026-02-10 10:50:38,954 - INFO - Location ZIP for MID 554402040703142: 60191
+2026-02-10 10:50:39,331 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2026-02-10 10:58:18,289 - INFO - CSV selected. Click [Run] to start.
+2026-02-10 10:58:18,837 - INFO - Running… (a browser window will open)
+2026-02-10 10:58:19,634 - INFO - Locating Chrome…
+2026-02-10 10:58:19,644 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-10 10:58:20,600 - INFO - Logging in…
+2026-02-10 10:58:22,766 - INFO - Skipped (already exists): 554402040703142
+2026-02-10 10:58:23,164 - INFO - All statements processed. Closed: 0, Failures: 0
+2026-02-10 10:58:23,318 - INFO - Task completed \u2705
+2026-02-10 10:58:40,404 - INFO - Running… (a browser window will open)
+2026-02-10 10:58:41,191 - INFO - Locating Chrome…
+2026-02-10 10:58:41,201 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-10 10:58:42,023 - INFO - Logging in…
+2026-02-10 10:58:44,289 - INFO - Downloading [1/1] MID 554402040703142…
+2026-02-10 10:58:55,608 - INFO - Location ZIP for MID 554402040703142: 60191
+2026-02-10 10:58:56,713 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2026-02-10 11:15:36,814 - INFO - CSV selected. Click [Run] to start.
+2026-02-10 11:15:37,428 - INFO - Running… (a browser window will open)
+2026-02-10 11:15:38,258 - INFO - Locating Chrome…
+2026-02-10 11:15:38,267 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-02-10 11:15:39,181 - INFO - Logging in…
+2026-02-10 11:15:41,370 - INFO - Downloading [1/1] MID 554402040703142…
+2026-02-10 11:15:53,802 - INFO - Location ZIP for MID 554402040703142: 60191
+2026-02-10 11:15:54,732 - INFO - MID: 554402040703142 for Fiserv - Omaha
+2026-02-10 11:17:25,112 - INFO - Downloaded statement for MID 554402040703142
+2026-02-10 11:17:38,236 - INFO - Downloaded & emailed: 554402040703142 -> brianl@zbspos.com
+2026-02-10 11:17:38,544 - INFO - All statements processed. Closed: 0, Failures: 0
+2026-02-10 11:17:38,702 - INFO - Task completed \u2705
+2026-05-19 17:09:18,050 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 17:09:18,679 - INFO - Running… (a browser window will open)
+2026-05-19 17:09:19,529 - INFO - Locating Chrome…
+2026-05-19 17:09:19,540 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 17:09:20,399 - INFO - Logging in…
+2026-05-19 17:09:22,221 - INFO - Downloading [1/1] MID 8739787681572965…
+2026-05-19 17:09:28,715 - ERROR - Can not find MID 8739787681572965
+2026-05-19 17:09:28,719 - INFO - Unhandled error on 8739787681572965: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("textbox", name="Filter...")
+
+2026-05-19 17:09:29,060 - INFO - Failed MIDs saved to failed_mids_20260519.csv
+2026-05-19 17:09:29,061 - INFO - Completed with 1 failures and 0 closed.
+2026-05-19 17:09:29,222 - INFO - Task completed \u2705
+2026-05-19 17:09:32,456 - INFO - Running… (a browser window will open)
+2026-05-19 17:09:33,302 - INFO - Locating Chrome…
+2026-05-19 17:09:33,311 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 17:09:34,233 - INFO - Logging in…
+2026-05-19 17:09:37,719 - INFO - Please re-enter credentials.
+2026-05-19 17:09:37,903 - INFO - Downloading [1/1] MID 8739787681572965…
+2026-05-19 17:09:38,637 - INFO - Re-entry cancelled or incomplete. Credentials not updated.
+2026-05-19 17:09:44,231 - ERROR - Can not find MID 8739787681572965
+2026-05-19 17:09:44,236 - INFO - Unhandled error on 8739787681572965: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("textbox", name="Filter...")
+
+2026-05-19 17:09:44,693 - INFO - Failed MIDs saved to failed_mids_20260519.csv
+2026-05-19 17:09:44,695 - INFO - Completed with 1 failures and 0 closed.
+2026-05-19 17:09:44,712 - INFO - Task completed \u2705
+2026-05-19 17:17:40,701 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 17:18:03,305 - INFO - Running… (a browser window will open)
+2026-05-19 17:18:04,134 - INFO - Locating Chrome…
+2026-05-19 17:18:04,145 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 17:18:05,202 - INFO - Logging in…
+2026-05-19 17:18:14,738 - INFO - Downloading [1/1] MID 8739787681572965…
+2026-05-19 17:24:44,120 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 17:24:45,198 - INFO - Running… (a browser window will open)
+2026-05-19 17:24:46,015 - INFO - Locating Chrome…
+2026-05-19 17:24:46,025 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 17:24:46,923 - INFO - Logging in…
+2026-05-19 17:24:53,128 - INFO - Downloading [1/1] MID 8739787681572965…
+2026-05-19 17:25:05,386 - INFO - CSV selected. Click [Run] to start.
+2026-05-19 17:25:05,935 - INFO - Running… (a browser window will open)
+2026-05-19 17:25:06,754 - INFO - Locating Chrome…
+2026-05-19 17:25:06,766 - INFO - Launching Chrome: C:\Program Files\Google\Chrome\Application\chrome.exe
+2026-05-19 17:25:07,601 - INFO - Logging in…
+2026-05-19 17:25:22,191 - INFO - Downloading [1/1] MID 8739787681572965…
+2026-05-19 17:25:22,227 - ERROR - Can not find MID 8739787681572965
+2026-05-19 17:25:22,256 - INFO - Unhandled error on 8739787681572965: Locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("textbox", name="Filter...")
+
+2026-05-19 17:25:22,580 - INFO - Failed MIDs saved to failed_mids_20260519.csv
+2026-05-19 17:25:22,582 - INFO - Completed with 1 failures and 0 closed.
+2026-05-19 17:25:22,732 - INFO - Task completed \u2705

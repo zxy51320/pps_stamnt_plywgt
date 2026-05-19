@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-GUI wrapper for statement download:
-- Pick a CSV (user chooses), reads MIDs from the "MID" column
-- On first run, prompt for username/password and store IN PLAINTEXT (demo parity)
-- "Forget / Re-enter" lets you clear and re-enter creds
-- Playwright runs in a background thread; UI stays responsive
-- Attempts to launch system-installed Google Chrome (preferred)
+pyinstaller -F -w --name "PPS_Statement_Downloader" --hidden-import "playwright._impl._api_types" --collect-all playwright --collect-submodules playwright --add-data "Pages;Pages" download_statement.py
 """
 
-import os, re, csv, json, logging, threading, traceback, shutil
+import os, re, csv, json, logging, threading, traceback, shutil, smtplib
 from pathlib import Path
 from typing import Optional, List
 from tkinter import Tk, Button, Label, filedialog, messagebox, StringVar, simpledialog
 from datetime import datetime
 from playwright.sync_api import sync_playwright
-
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+from email.utils import formataddr
 from Pages.login_page import LoginPage
 from Pages.dashboard_page import DashboardPage
 
@@ -47,16 +46,23 @@ def find_chrome_exe() -> Optional[str]:
     return None
 
 # ---------- CSV loader (read "MID" column) ----------
-def load_mids(csv_path: str) -> List[str]:
-    mids: List[str] = []
+def load_mids(csv_path: str):
+    mids = {}
     with open(csv_path, newline="", encoding="utf-8-sig") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            mid_raw = (row.get("MID") or "").strip()
-            # 与原脚本一致：去掉首尾非数字字符
-            mid = re.sub(r'^\D+|\D+$', '', mid_raw)
-            if mid:
-                mids.append(mid)
+            if row.get("is_Active") == "TRUE":
+                mid_raw = (row.get("MID") or "").strip()
+                # 与原脚本一致：去掉首尾非数字字符
+                mid = re.sub(r'^\D+|\D+$', '', mid_raw)
+                dba = (row.get("DBA") or "").strip()
+                email = (row.get("Email Address") or "").strip()
+                if mid and email and dba:
+                    mids[mid] = (dba, email)
+                else:
+                    logging.warning(f"Skipping row with missing MID/Email/DBA: {row}")
+            else:
+                logging.info(f"Skipping inactive MID row: {row}")
     return mids
 
 # ---------- Plaintext credentials ----------
@@ -83,6 +89,60 @@ def delete_creds():
     except Exception:
         return False
 
+# ---------- Email sender ----------
+def send_email_with_attachment(recipient: str, pdf_path: str, dba: str, mid: str, month: str) -> str:
+    
+    SMTP_SERVER = "smtp.gmail.com"
+    SMTP_PORT = 465
+    SENDER = "brianl@zbspos.com"
+    APP_PASSWORD = "uwdc peoq kymg kncd"  # App Password
+
+    msg = MIMEMultipart()
+    msg["From"] = formataddr(("Customer Service", SENDER))
+    msg["Reply-To"] = "cs@zbspos.com"
+    msg["To"] = recipient
+    msg["Subject"] = f"{month} Statement (月结单) for {dba} - {mid}"
+
+    body = """
+    Dear valued customer,
+    Attached is your monthly statement. Please take a look. 
+    The password is your business ZIP code.
+    Feel free to contact us if you have any questions or concerns.
+
+    尊敬的客户，
+    附上您的本月账单，供您查看。
+    账单密码为您商户的邮编(ZIP Code)。
+    如有任何问题或需要帮助，请随时联系我们。
+    """
+    msg.attach(MIMEText(body, "plain"))
+
+    path = Path(pdf_path)
+    with open(path, "rb") as f:
+        part = MIMEBase("application", "octet-stream")
+        part.set_payload(f.read())
+
+    encoders.encode_base64(part)
+    part.add_header(
+        "Content-Disposition",
+        f'attachment; filename="{path.name}"'
+    )
+    msg.attach(part)
+
+    with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
+        try:
+            server.login(SENDER, APP_PASSWORD)
+            server.send_message(msg)
+            status = "SENT_OK"
+        except smtplib.SMTPRecipientsRefused as e:
+            status = "RECIPIENT_REFUSED"
+        except smtplib.SMTPAuthenticationError:
+            status = "AUTH_FAILED"
+        except smtplib.SMTPException as e:
+            status = f"SMTP_ERROR: {e}"
+
+    return status
+
+
 # ---------- Playwright flow (download statements) ----------
 def run_flow(csv_path: str, username: str, password: str, log_cb):
     mids = load_mids(csv_path)
@@ -108,14 +168,18 @@ def run_flow(csv_path: str, username: str, password: str, log_cb):
 
         log_cb("Logging in…")
         login_page.login(username, password)
+        messagebox.showinfo(
+            "Two-Step Authentication",
+            "Please click Push on the page to complete two-step authentication, then click OK to continue."
+        )
 
         closed_list = []          # 已关闭的 MID
         failures_rows = []        # 失败的行 (MID, Reason)
 
-        for idx, mid in enumerate(mids, 1):
+        for idx, (mid, (dba, email)) in enumerate(mids.items(), 1):
             try:
                 status_prefix = f"[{idx}/{len(mids)}] MID {mid}"
-                pdf_path = os.path.join(output_dir, f"{mid}.zip")
+                pdf_path = os.path.join(output_dir, f"{mid}.pdf")
 
                 if os.path.exists(pdf_path):
                     log_cb(f"Skipped (already exists): {mid}")
@@ -123,18 +187,31 @@ def run_flow(csv_path: str, username: str, password: str, log_cb):
 
                 log_cb(f"Downloading {status_prefix}…")
                 dashboard.search_mid(mid)
-                status, reason = dashboard.download_pdf(mid)
-
-                if status == "closed":
+                status, reason = dashboard.download_pdf(mid,log_cb)
+                if status == "downloaded":
+                    # 发送邮件
+                    e_status = send_email_with_attachment(email, pdf_path, dba, mid, dashboard.last_month_name)
+                    if e_status == "SENT_OK":
+                        log_cb(f"Downloaded & emailed: {mid} -> {email}")
+                    else:
+                        failures_rows.append((mid, f"Email failed: {e_status}"))
+                        log_cb(f"Email failed for {mid}: {e_status}")
+                elif status == "closed":
                     closed_list.append(mid)
                     log_cb(f"Closed merchant: {mid} -> recorded")
-                elif status == "failed":
+                else:
                     # 重试一次
                     log_cb(f"Error on {mid}: {reason} (will retry once)")
                     try:
                         page.reload()
-                        status2, reason2 = dashboard.download_pdf(mid)
+                        status2, reason2 = dashboard.download_pdf(mid,log_cb)
                         if status2 == "downloaded":
+                            e_status2 = send_email_with_attachment(email, pdf_path, dba, mid, dashboard.last_month_name)
+                            if e_status2 == "SENT_OK":
+                                log_cb(f"Downloaded & emailed: {mid} -> {email}")
+                            else:
+                                failures_rows.append((mid, f"Email failed: {e_status2}"))
+                                log_cb(f"Email failed for {mid}: {e_status2}")
                             log_cb(f"Retry success: {mid}")
                         elif status2 == "closed":
                             closed_list.append(mid)
@@ -145,7 +222,6 @@ def run_flow(csv_path: str, username: str, password: str, log_cb):
                     except Exception as e2:
                         failures_rows.append((mid, f"Retry exception: {e2}"))
                         log_cb(f"Failed twice: {mid} ({e2})")
-
             except Exception as e:
                 failures_rows.append((mid, f"Loop exception: {e}"))
                 log_cb(f"Unhandled error on {mid}: {e}")
@@ -191,11 +267,15 @@ class App:
         self.status = StringVar(value="Select a CSV with a 'MID' column, then click [Run].")
         self.csv_label = StringVar(value="CSV: Not selected")
 
-        Button(root, text="Select CSV", width=22, command=self.pick_csv).pack(pady=6)
+        self.csv_button = Button(root, text="Select CSV", width=22, command=self.pick_csv)
+        self.csv_button.pack(pady=6)
         Label(root, textvariable=self.csv_label, wraplength=520, justify="left").pack(pady=2)
 
-        Button(root, text="Run", width=22, command=self.on_run).pack(pady=6)
-        Button(root, text="Forget / Re-enter Credentials", width=22, command=self.on_forget_and_reenter).pack(pady=2)
+        self.run_button = Button(root, text="Run", width=22, command=self.on_run)
+        self.run_button.pack(pady=6)
+        self.creds_button = Button(root, text="Forget / Re-enter Credentials", width=22, command=self.on_forget_and_reenter)
+        self.creds_button.pack(pady=2)
+        self.buttons = [self.csv_button, self.run_button, self.creds_button]
 
         Label(root, textvariable=self.status, fg="#444", wraplength=560, justify="left").pack(pady=8)
 
@@ -210,6 +290,11 @@ class App:
         self.status.set(msg)
         self.root.update_idletasks()
         logging.info(msg)
+
+    def set_buttons_enabled(self, enabled: bool):
+        state = "normal" if enabled else "disabled"
+        for button in self.buttons:
+            button.config(state=state)
 
     def pick_csv(self):
         path = filedialog.askopenfilename(
@@ -254,18 +339,22 @@ class App:
             messagebox.showwarning("Notice", "Please select a CSV file first.")
             return
 
+        self.set_buttons_enabled(False)
+
         # load creds (plaintext)
         creds = load_creds()
         if not creds:
             username, password = self.prompt_and_save_creds(require_both=True)
             if not username or not password:
                 messagebox.showwarning("Notice", "Username or password not provided.")
+                self.set_buttons_enabled(True)
                 return
         else:
             username = creds.get("username") or ""
             password = creds.get("password") or ""
             if not username or not password:
                 messagebox.showwarning("Notice", "Stored credentials are incomplete. Please use 'Forget / Re-enter Credentials'.")
+                self.set_buttons_enabled(True)
                 return
 
         def worker():
@@ -279,6 +368,8 @@ class App:
                 logging.error(err)
                 self.set_status("Run failed")
                 messagebox.showerror("Error", err)
+            finally:
+                self.root.after(0, lambda: self.set_buttons_enabled(True))
 
         threading.Thread(target=worker, daemon=True).start()
 
